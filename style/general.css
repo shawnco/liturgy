@@ -1,0 +1,55 @@
+html{
+  height:100%;
+}
+
+body{
+  font-family: Arial, Verdana, Sans-serif;
+  background-color: #bdc3c7;
+  height:100%;
+  margin:0;
+}
+#container{
+  width:100%;
+  min-height:100%;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right:auto;
+  background-color: #fffdd0;
+}
+
+#container p{
+  padding-left:15px;
+  padding-right:15px;
+}
+
+#header{
+  background-color: #3d4047;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+h1{
+  text-align: center;
+}
+#footer{
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #3d4047;
+}
+
+#footer a:link, #footer a:hover, #footer a:visited{
+  color:white;
+}
+
+/* This is specific to the index page. */
+table{
+  margin-left: auto;
+  margin-right: auto;
+}
+td{
+  padding: 25px 25px 25px 25px;
+  border: 1px solid;
+  text-align: center;
+}
