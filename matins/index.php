@@ -7,7 +7,7 @@ require("/../scripts/functions.php");
 $season = getSeasonNew();
 $dow = dayOfWeek();
 $today = epochTime();
-
+$psalms = getMatinsPsalms($today, $psalmTable);
 ?>
 
 <p><b>Versicles</b><br />
@@ -59,25 +59,7 @@ $today = epochTime();
 </p>
 
 <p><b>Psalmoldy</b><br />
-  <?php
-  
-  // Select the two morning psalms for the season and day.
-  if($season == "advent" || $season == "easter" || $season == "gen1" || $season == "gen2" ||
-    $season == "gen3"   || $season == "gen4"   || $season == "lent"){
-    $psalm1 = $psalmTable[$season][$dow]["morning"][0];  
-  }else{ // It's a Christmas season
-    $psalm1 = $psalmTable[$season]["morning"][0];
-  } 
-  if($dow == "0") $psalm2 = "150";
-  else if($dow == "1") $psalm2 = "145";
-  else if($dow == "2") $psalm2 = "146";
-  else if($dow == "3") $psalm2 = "147:1-11";
-  else if($dow == "4") $psalm2 = "147:12-20";
-  else if($dow == "5") $psalm2 = "148";
-  else $psalm2 = "149"; 
-  
-  ?>
-  <iframe src="https://www.biblegateway.com/passage/?search=psalm+<?php echo $psalm1; ?>;+psalm+<?php echo $psalm2; ?>&version=NASB" width="80%" height="300px"></iframe>
+  <iframe src="https://www.biblegateway.com/passage/?search=psalm+<?php echo $psalms[0]; ?>;+psalm+<?php echo $psalms[1]; ?>&version=NASB" width="80%" height="300px"></iframe>
 </p>
 
 <p><b>Hymn</b><br />

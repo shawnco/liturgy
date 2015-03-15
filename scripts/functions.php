@@ -1,109 +1,5 @@
 <?php
 
-// Central Standard, suckaaaaas
-date_default_timezone_set("America/Mexico_City");
-// Fetch the number of days that have passed since the Unix epoch.
-// Used mainly to determine which version of a rotating element (ie Lord's Prayer, Salutation, Prayer) to use.
-function epochTime(){
-  return floor( time()/86400 );
-}
-
-// Fetch numerical value showing day of week.
-function dayOfWeek(){
-  return date("w");
-}
-
-// Shorthand for showing it's the congregation's line.
-function cecho($msg){
-  echo "<span id='congregation'><b>C:</b> " . $msg . "</span><br />";
-}
-
-// Shorthand for showing it's the lecturn's line.
-function lecho($msg){
-  echo "<span id='lecturn'><b>L:</b> " . $msg . "</span><br />";
-}
-
-// Shorthand for including audio files
-function audio($office, $src){
-  echo "<audio controls>";
-  echo "  <source src='../" . $office . "-audio/" . $src . ".ogg' />";
-  echo "  <source src='../" . $office . "-audio/" . $src . ".mp3' />";
-  echo "</audio><br />";
-}
-
-// Disclaimer
-function disclaimer(){
-  echo "<p><i>Audio is from the <a href='http://www.lcms.org/resources/audio'>LCMS website</a> and protected under fair use policy, as this is non-commercial.</i></p>";
-}
-
-
-// Tests to see if the current day falls under Advent, Christmas, Easter,  Epiphany/General, or Lent, 
-function getSeasonNew(){
-  $today = epochTime();
-
-  $easter = floor(easter_date(date("Y"))/86400);
-  
-  $christmas = floor(mktime(0, 0, 0, 12, 24, date("Y")) / 86400); // Christmas Eve.
-  
-  // Lent is 46 days prior to Easter.
-  if( ($today >= $easter-46) && ($today < $easter) )
-    return "lent";
-    
-  // Easter lasts 50 days.
-  if( ($today >= $easter) && ($today < $easter+50) )
-    return "easter";
-  
-  // Advent is the four weeks prior to the first Sunday of Christmas.
-  // This falls on any date between 27 Nov and 3 Dec. Find which one of these is a Thursday, then Advent starts three days later.
-  $i = 24;
-  while( 4 != date("w", mktime(0, 0, 0, 11, $i, date("Y"))) ){
-    $i++;
-  }
-  $advent = mktime(0, 0, 0, 11, $i, date("Y"));
-  $advent = floor($advent/86400);
-  $advent += 3;
-  
-  if( ($today >= $advent) && ($today < $christmas) ){
-    return "advent";
-  }
-  
-  // Christmas season lasts 12 days. I'll be nice and return which day of the Christmas season it's on.
-  // Christmas season is actually a very annoying edge case. So long as the date is between Dec. 24 and Dec. 31, we have no problems.
-  if($today == $christmas) return "christmas1";
-  if($today == $christmas+1) return "christmas2";
-  if($today == $christmas+2) return "christmas3";
-  if($today == $christmas+3) return "christmas4";
-  if($today == $christmas+4) return "christmas5";
-  if($today == $christmas+5) return "christmas6";
-  if($today == $christmas+6) return "christmas7";
-  if($today == $christmas+7) return "christmas8";
-  
-  // Once we're Jan. 1 through Jan. 6, we need to try a more manual approach. It's just easier, if less pretty.
-  if($today == (floor(mktime(0,0,0,1,1,date("Y"))/86400 ))) return "christmas9";
-  if($today == (floor(mktime(0,0,0,1,2,date("Y"))/86400 ))) return "christmas10";
-  if($today == (floor(mktime(0,0,0,1,3,date("Y"))/86400 ))) return "christmas11";
-  if($today == (floor(mktime(0,0,0,1,4,date("Y"))/86400 ))) return "christmas12";
-  if($today == (floor(mktime(0,0,0,1,5,date("Y"))/86400 ))) return "christmas13";
-  if($today == (floor(mktime(0,0,0,1,6,date("Y"))/86400 ))) return "christmas14";
-  
-  // The very last thing we do. Find which general/Epiphany week we are in.
-  $today += 4;
-  $week = $today / 7;
-  
-  if($week % 4 == 0) return "gen1";
-  if($week % 4 == 1) return "gen2";
-  if($week % 4 == 2) return "gen3";
-  if($week % 4 == 3) return "gen4";
-  
-  // This shouldn't happen.
-  return "Error: Did not correctly compute season.";
-  
-}
-
-function echoSeason(){
-  echo getSeasonNew();
-}
-
 // The master psalm array.
 $psalmTable = array(
   "lent" => array(
@@ -184,6 +80,206 @@ $psalmTable = array(
   "christmas13" => array("morning" => "99", "evening" => array("96","110")),
   "christmas14" => array("morning" => "72", "evening" => array("67","110"))
 );
+
+// Central Standard, suckaaaaas
+date_default_timezone_set("America/Mexico_City");
+// Fetch the number of days that have passed since the Unix epoch.
+// Used mainly to determine which version of a rotating element (ie Lord's Prayer, Salutation, Prayer) to use.
+function epochTime(){
+  return floor( time()/86400 );
+}
+
+// Fetch numerical value showing day of week.
+function dayOfWeek(){
+  return date("w");
+}
+
+// Shorthand for showing it's the congregation's line.
+function cecho($msg){
+  echo "<span id='congregation'><b>C:</b> " . $msg . "</span><br />";
+}
+
+// Shorthand for showing it's the lecturn's line.
+function lecho($msg){
+  echo "<span id='lecturn'><b>L:</b> " . $msg . "</span><br />";
+}
+
+// Shorthand for including audio files
+function audio($office, $src){
+  echo "<audio controls>";
+  echo "  <source src='../" . $office . "-audio/" . $src . ".ogg' />";
+  echo "  <source src='../" . $office . "-audio/" . $src . ".mp3' />";
+  echo "</audio><br />";
+}
+
+// Disclaimer
+function disclaimer(){
+  echo "<p><i>Audio is from the <a href='http://www.lcms.org/resources/audio'>LCMS website</a> and protected under fair use policy, as this is non-commercial.</i></p>";
+}
+
+
+
+// Better version of the season getter. Instead of specifying today, it can be used for any date in general.
+function getSeason($today){  // Where $today is previously made via epochTime.
+  $easter = floor(easter_date(date("Y"))/86400);
+  $christmas = floor(mktime(0,0,0,12,24,date("Y")) / 86400);
+  
+  // Lent
+  if( ($today >= $easter-46) && ($today < $easter) )
+    return "lent";
+  else if( ($today >= $easter) && ($today < $easter+50) )
+    return "easter";
+  else{
+    $i = 24;
+    while( 4 != date("w", mktime(0, 0, 0, 11, $i, date("Y"))) ){
+      $i++;
+    }
+    $advent = mktime(0, 0, 0, 11, $i, date("Y"));
+    $advent = floor($advent/86400);
+    $advent += 3;
+    if( ($today >= $advent) && ($today < $christmas) )
+   	  return "advent";
+    else if($today == $christmas) return "christmas1";
+    else if($today == $christmas+1) return "christmas2";
+    else if($today == $christmas+2) return "christmas3";
+    else if($today == $christmas+3) return "christmas4";
+    else if($today == $christmas+4) return "christmas5";
+    else if($today == $christmas+5) return "christmas6";
+    else if($today == $christmas+6) return "christmas7";
+    else if($today == $christmas+7) return "christmas8";	
+	else{
+	  $today += 4;
+      $week = $today / 7;
+	  if($week % 4 == 0) return "gen1";
+      else if($week % 4 == 1) return "gen2";
+      else if($week % 4 == 2) return "gen3";
+      else if($week % 4 == 3) return "gen4";
+	}
+  }  
+  
+  // There has been a failure of divine proportions.
+  return "Failed to generate season.";
+}
+
+
+
+// Tests to see if the current day falls under Advent, Christmas, Easter,  Epiphany/General, or Lent, 
+function getSeasonNew(){
+  $today = epochTime();
+
+  $easter = floor(easter_date(date("Y"))/86400);
+  
+  $christmas = floor(mktime(0, 0, 0, 12, 24, date("Y")) / 86400); // Christmas Eve.
+  
+  // Lent is 46 days prior to Easter.
+  if( ($today >= $easter-46) && ($today < $easter) )
+    return "lent";
+    
+  // Easter lasts 50 days.
+  if( ($today >= $easter) && ($today < $easter+50) )
+    return "easter";
+  
+  // Advent is the four weeks prior to the first Sunday of Christmas.
+  // This falls on any date between 27 Nov and 3 Dec. Find which one of these is a Thursday, then Advent starts three days later.
+  $i = 24;
+  while( 4 != date("w", mktime(0, 0, 0, 11, $i, date("Y"))) ){
+    $i++;
+  }
+  $advent = mktime(0, 0, 0, 11, $i, date("Y"));
+  $advent = floor($advent/86400);
+  $advent += 3;
+  
+  if( ($today >= $advent) && ($today < $christmas) ){
+    return "advent";
+  }
+  
+  // Christmas season lasts 12 days. I'll be nice and return which day of the Christmas season it's on.
+  // Christmas season is actually a very annoying edge case. So long as the date is between Dec. 24 and Dec. 31, we have no problems.
+  if($today == $christmas) return "christmas1";
+  if($today == $christmas+1) return "christmas2";
+  if($today == $christmas+2) return "christmas3";
+  if($today == $christmas+3) return "christmas4";
+  if($today == $christmas+4) return "christmas5";
+  if($today == $christmas+5) return "christmas6";
+  if($today == $christmas+6) return "christmas7";
+  if($today == $christmas+7) return "christmas8";
+  
+  // Once we're Jan. 1 through Jan. 6, we need to try a more manual approach. It's just easier, if less pretty.
+  if($today == (floor(mktime(0,0,0,1,1,date("Y"))/86400 ))) return "christmas9";
+  if($today == (floor(mktime(0,0,0,1,2,date("Y"))/86400 ))) return "christmas10";
+  if($today == (floor(mktime(0,0,0,1,3,date("Y"))/86400 ))) return "christmas11";
+  if($today == (floor(mktime(0,0,0,1,4,date("Y"))/86400 ))) return "christmas12";
+  if($today == (floor(mktime(0,0,0,1,5,date("Y"))/86400 ))) return "christmas13";
+  if($today == (floor(mktime(0,0,0,1,6,date("Y"))/86400 ))) return "christmas14";
+  
+  // The very last thing we do. Find which general/Epiphany week we are in.
+  $today += 4;
+  $week = $today / 7;
+  
+  if($week % 4 == 0) return "gen1";
+  if($week % 4 == 1) return "gen2";
+  if($week % 4 == 2) return "gen3";
+  if($week % 4 == 3) return "gen4";
+  
+  // This shouldn't happen.
+  return "Error: Did not correctly compute season.";
+  
+}
+
+function getMatinsPsalms($day, $psalmTable){
+  $season = getSeason(epochTime());
+  $dow = dayOfWeek();
+  if($season == "advent" || $season == "easter" || $season == "gen1" || $season == "gen2" ||
+    $season == "gen3"   || $season == "gen4"   || $season == "lent"){
+    $psalm1 = $psalmTable[$season][$dow]["morning"][0];  
+  }else{ // It's a Christmas season
+    $psalm1 = $psalmTable[$season]["morning"][0];
+  } 
+  if($dow == "0") $psalm2 = "150";
+  else if($dow == "1") $psalm2 = "145";
+  else if($dow == "2") $psalm2 = "146";
+  else if($dow == "3") $psalm2 = "147:1-11";
+  else if($dow == "4") $psalm2 = "147:12-20";
+  else if($dow == "5") $psalm2 = "148";
+  else $psalm2 = "149";
+  return array($psalm1, $psalm2);
+}
+
+function getTercePsalm($day){
+  // I want this to actually depend on the day of the week of the specified date. 
+  $day *= 86400;
+  $dow = date("w", $day);
+  $r = "";
+  if($dow == "0") $r = "1-32";
+  else if($dow == "1") $r = "33-56";
+  else if($dow == "2") $r = "57-80";
+  else if($dow == "3") $r = "81-104";
+  else if($dow == "4") $r = "105-128";
+  else if($dow == "5") $r = "129-152";
+  else $r = "153-76";
+  return "119:" . $r;
+}
+
+/* ---- These functions will do the work of calculating the psalms for each office. Better than what I am currently doing.
+function getSextPsalm($day){
+
+}
+
+function getNonePsalm($day){
+}
+
+function getVespersPsalms($day){
+}
+
+function getComplinePsalm($day){
+  // Alright, admit this one is kinda pointless. It always returns the same psalm...
+  return 4;
+}
+
+
+*/
+
+
 
 
 ?>

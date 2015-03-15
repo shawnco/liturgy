@@ -29,6 +29,25 @@ body{
   padding-bottom: 5px;
 }
 
+#menu {
+  background-color: #3d4047;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#menu ul li{
+  list-style: none;
+  display: inline-block;
+}
+
+#menu ul li a{
+  color: white;
+  text-decoration: none;
+  padding: 20px 20px 20px 20px;
+  font-weight: bold;
+}
+
 h1{
   text-align: center;
 }

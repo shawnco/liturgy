@@ -5,8 +5,10 @@ $pageHead = "Terce";
 require("/../template/template-top.php");
 require("/../scripts/functions.php");
 // Find today's day of the week.
-$season = getSeasonNew();
+$today = epochTime();
+$season = getSeason($today);
 $d = date("w");
+$p = getTercePsalm($today);
 
 ?>
 
@@ -23,15 +25,16 @@ $d = date("w");
 
 <p><b>Psalm, Short Lesson, and Verse</b><br />
   <?php
-  if($d == "0") $r = "1-32";
+  /*if($d == "0") $r = "1-32";
   else if($d == "1") $r = "33-56";
   else if($d == "2") $r = "57-80";
   else if($d == "3") $r = "81-104";
   else if($d == "4") $r = "105-128";
   else if($d == "5") $r = "129-152";
-  else $r = "153-76";
+  else $r = "153-76";*/
+  
   ?>
-  <iframe src="https://www.biblegateway.com/passage/?search=psalm+119:<?php echo $r; ?>&version=NASB" width="80%" height="300px"></iframe><br /><br />
+  <iframe src="https://www.biblegateway.com/passage/?search=<?php echo $p; ?>&version=NASB" width="80%" height="300px"></iframe><br /><br />
 
   <?php
   if($d == "0") lecho("<b>1 John 4:16:</b> We have come to know and have believed the love which God has for us. God is love, and the one who abides in love abides in God, and God abides in him.");
