@@ -247,7 +247,7 @@ function getMatinsPsalms($day, $psalmTable){
 
 function getTercePsalm($day){
   // I want this to actually depend on the day of the week of the specified date. 
-  $day *= 86400;
+  $day *= 86402; // For some reason, 86400 doesn't show the right psalm for the day.
   echo date("r",$day) . " " . date("r",mktime(0,0,0,3,15,2015));
   $dow = date("w", $day);
   $r = "";
