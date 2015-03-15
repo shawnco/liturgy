@@ -256,7 +256,7 @@ function getTercePsalm($day){
   else if($dow == "3") $r = "81-104";
   else if($dow == "4") $r = "105-128";
   else if($dow == "5") $r = "129-152";
-  else $r = "153-76";
+  else $r = "153-176";
   return "119:" . $r;
 }
 

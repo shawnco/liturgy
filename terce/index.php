@@ -34,7 +34,7 @@ $p = getTercePsalm($today);
   else $r = "153-76";*/
   
   ?>
-  <iframe src="https://www.biblegateway.com/passage/?search=<?php echo $p; ?>&version=NASB" width="80%" height="300px"></iframe><br /><br />
+  <iframe src="https://www.biblegateway.com/passage/?search=psalm+<?php echo $p; ?>&version=NASB" width="80%" height="300px"></iframe><br /><br />
 
   <?php
   if($d == "0") lecho("<b>1 John 4:16:</b> We have come to know and have believed the love which God has for us. God is love, and the one who abides in love abides in God, and God abides in him.");
