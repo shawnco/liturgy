@@ -248,6 +248,7 @@ function getMatinsPsalms($day, $psalmTable){
 function getTercePsalm($day){
   // I want this to actually depend on the day of the week of the specified date. 
   $day *= 86400;
+  echo date("r",$day) . " " . date("r",mktime(0,0,0,3,15,2015));
   $dow = date("w", $day);
   $r = "";
   if($dow == "0") $r = "1-32";
@@ -260,12 +261,30 @@ function getTercePsalm($day){
   return "119:" . $r;
 }
 
-/* ---- These functions will do the work of calculating the psalms for each office. Better than what I am currently doing.
-function getSextPsalm($day){
 
+function getSextPsalm($day){
+  if($day % 8 == 0) $p = "120";
+  else if($day % 8 == 1) $p = "122";
+  else if($day % 8 == 2) $p = "124";
+  else if($day % 8 == 3) $p = "126";
+  else if($day % 8 == 4) $p = "128";
+  else if($day % 8 == 5) $p = "130";
+  else if($day % 8 == 6) $p = "132:1-9";
+  else $p = "133";  
+  return $p;
 }
 
+
 function getNonePsalm($day){
+  if($day % 8 == 0) $p = "121";
+  else if($day % 8 == 1) $p = "123";
+  else if($day % 8 == 2) $p = "125";
+  else if($day % 8 == 3) $p = "127";
+  else if($day % 8 == 4) $p = "129";
+  else if($day % 8 == 5) $p = "131";
+  else if($day % 8 == 6) $p = "132:10-18";
+  else $p = "134";
+  return $p;
 }
 
 function getVespersPsalms($day){
@@ -277,7 +296,7 @@ function getComplinePsalm($day){
 }
 
 
-*/
+
 
 
 

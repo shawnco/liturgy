@@ -5,10 +5,10 @@ $pageHead = "Sext";
 require("/../template/template-top.php");
 require("/../scripts/functions.php");
 // Find today's day of the week.
-$season = getSeasonNew();
+$today = epochTime();
+$season = getSeason($today);
 $d = date("w");
-$days = epochTime();
-
+$p = getSextPsalm($today);
 ?>
 
 
@@ -24,16 +24,6 @@ $days = epochTime();
 </p>
 
 <p><b>Psalm, Short Lesson, and Verse</b><br />
-  <?php
-  if($days % 8 == 0) $p = "120";
-  else if($days % 8 == 1) $p = "122";
-  else if($days % 8 == 2) $p = "124";
-  else if($days % 8 == 3) $p = "126";
-  else if($days % 8 == 4) $p = "128";
-  else if($days % 8 == 5) $p = "130";
-  else if($days % 8 == 6) $p = "132:1-9";
-  else $p = "133";
-  ?>
   
   <iframe src="http://www.biblegateway.com/passage/?search=psalm+<?php echo $p; ?>&version=NASB" width="80%" height="300px"></iframe><br /><br />
   

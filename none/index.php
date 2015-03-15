@@ -5,9 +5,11 @@ $pageHead = "None";
 require("/../template/template-top.php");
 require("/../scripts/functions.php");
 // Find today's day of the week.
-$season = getSeasonNew();
+$today = epochTime();
+$season = getSeasonNew($today);
+$p = getNonePsalm($today);
 $d = date("w");
-$days = epochTime();
+
 
 ?>
 
@@ -24,17 +26,6 @@ $days = epochTime();
 </p>
 
 <p><b>Psalm, Short Lesson, and Verse</b><br />
-  <?php
-  if($days % 8 == 0) $p = "121";
-  else if($days % 8 == 1) $p = "123";
-  else if($days % 8 == 2) $p = "125";
-  else if($days % 8 == 3) $p = "127";
-  else if($days % 8 == 4) $p = "129";
-  else if($days % 8 == 5) $p = "131";
-  else if($days % 8 == 6) $p = "132:10-18";
-  else $p = "134";
-  ?>
-  
   <iframe src="http://www.biblegateway.com/passage/?search=psalm+<?php echo $p; ?>&version=NASB" width="80%" height="300px"></iframe><br /><br />
 
   <?php
