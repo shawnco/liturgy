@@ -248,7 +248,7 @@ function getMatinsPsalms($day, $psalmTable){
 function getTercePsalm($day){
   // I want this to actually depend on the day of the week of the specified date. 
   $day *= 86402; // For some reason, 86400 doesn't show the right psalm for the day.
-  echo date("r",$day) . " " . date("r",mktime(0,0,0,3,15,2015));
+  //echo date("r",$day) . " " . date("r",mktime(0,0,0,3,15,2015));
   $dow = date("w", $day);
   $r = "";
   if($dow == "0") $r = "1-32";
@@ -287,10 +287,19 @@ function getNonePsalm($day){
   return $p;
 }
 
-function getVespersPsalms($day){
+function getVespersPsalms($dow, $psalmTable){
+  $season = getSeason(epochTime());
+  // Select the two evening psalms for the season and day.
+  if($season == "advent" || $season == "easter" || $season == "gen1" || $season == "gen2" ||
+     $season == "gen3"   || $season == "gen4"   || $season == "lent"){
+    $psalms = array($psalmTable[$season][$dow]["evening"][0], $psalmTable[$season][$dow]["evening"][1]);  
+  }else{ // It's a Christmas season
+    $psalms = array($psalmTable[$season]["evening"][0], $psalmTable[$season]["evening"][1]);
+  }
+  return $psalms;
 }
 
-function getComplinePsalm($day){
+function getComplinePsalm(){
   // Alright, admit this one is kinda pointless. It always returns the same psalm...
   return 4;
 }

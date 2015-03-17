@@ -7,6 +7,7 @@ require("/../scripts/functions.php");
 $season = getSeasonNew();
 $days = epochTime();
 $dayOfWk = dayOfWeek();
+$psalm = getComplinePsalm();
 
 // Table of prayers.
 $prayers = array(
@@ -90,7 +91,7 @@ $vCombos = array( // This will be long.
   </p>
   
   <p><b>Psalmoldy</b><br />
-    <iframe src="http://www.biblegateway.com/passage/?search=psalm+4&version=nasb" width="80%" height="300px"></iframe>
+    <iframe src="http://www.biblegateway.com/passage/?search=psalm+<?php echo $psalm; ?>&version=nasb" width="80%" height="300px"></iframe>
   </p>
 
   <p><b>Readings</b><br />

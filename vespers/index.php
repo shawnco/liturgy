@@ -4,17 +4,11 @@ $pageTitle = "Vespers";
 $pageHead = "Vespers";
 require("/../template/template-top.php");
 require("/../scripts/functions.php");
-$season = getSeasonNew();
 $days = epochTime();
+$season = getSeason($days);
 $dow = dayOfWeek();
+$psalms = getVespersPsalms($dow, $psalmTable);
 
-// Select the two evening psalms for the season and day.
-if($season == "advent" || $season == "easter" || $season == "gen1" || $season == "gen2" ||
-   $season == "gen3"   || $season == "gen4"   || $season == "lent"){
-  $psalms = array($psalmTable[$season][$dow]["evening"][0], $psalmTable[$season][$dow]["evening"][1]);  
-}else{ // It's a Christmas season
-  $psalms = array($psalmTable[$season]["evening"][0], $psalmTable[$season]["evening"][1]);
-}
 
 ?>
 
