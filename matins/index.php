@@ -8,6 +8,7 @@ $season = getSeasonNew();
 $dow = dayOfWeek();
 $today = epochTime();
 $psalms = getMatinsPsalms($today, $psalmTable);
+$data = getMatinsData();
 ?>
 
 <p><b>Versicles</b><br />
@@ -68,23 +69,9 @@ $psalms = getMatinsPsalms($today, $psalmTable);
 
 <p><b>Readings</b><br />
 
-  <?php
-  if($dow == "0")
-    $r = "<b>Revelation 7:10, 12:</b> Salvation to our God who sits on the throne, and to the Lamb. Blessing and glory and wisdom and thanksgiving and honor and power and might, be to our God forever and ever. Amen.";
-  else if($dow == "1")
-    $r = "<b>James 2:12-13:</b> So speak and so act as those who are to be judged by the law of liberty. For judgment will be merciless to one who has shown no mercy; mercy triumphs over judgment.";
-  else if($dow == "2")
-    $r = "<b>1 Thessalonians 5:4-5:</b> But you, brethren, are not in darkness, that the day would overtake you like a thief; for you are all sons of light and sons of day. We are not of night nor of darkness.";
-  else if($dow == "3")
-    $r = "<b>Romans 8:35, 37:</b> Who will separate us from the love of Christ? Will tribulation, or distress, or persecution, or famine, or nakedness, or peril, or sword? No, in all these things we overwhelmingly conquer through Him who loved us.";
-  else if($dow == "4")
-    $r = "<b>1 Peter 4:10-11:</b> As each one has received a special gift, employ it in serving one another as good stewards of the manifold grace of God. Whoever serves is to do so as one who is serving by the strength which God supplies; so that in all things God may be glorified through Jesus Christ.";
-  else if($dow == "5")
-    $r = "<b>Ephesians 4:29-32:</b> Let no unwholesome word proceed from your mouth, but only such a word as is good for edification according to the need of the moment, so that it will give grace to those who hear. Do not grieve the Holy Spirit of God, by whom you were sealed for the day of redemption. Let all bitterness and wrath and anger and clamor and slander be put away from you, along with all malice. Be kind to one another, tender-hearted, forgiving each other, just as God in Christ also has forgiven you.";
-  else
-    $r = "<b>2 Peter 1:10-11:</b> Therefore, brethren, be all the more diligent to make certain about His calling and choosing you; for as long as you practice these things, you will never stumble; for in this way the entrance into the eternal kingdom of our Lord and Savior Jesus Christ will be abundantly supplied to you.";
-    
-  lecho($r);  
+  <iframe src="https://www.biblegateway.com/passage/?search=<?php echo getMatinsAddress($data); ?> &verson=NASB" width="80%" height="300px"></iframe><br />
+   
+   <?php
   lecho("O Lord, have mercy on us.");
   cecho("Thanks be to God.");
   ?>
@@ -118,7 +105,7 @@ $psalms = getMatinsPsalms($today, $psalmTable);
 </p>
 
 <p><b>Sermon</b><br />
-  <iframe src="http://www.lhm.org/dailydevotions.asp" height="300px" width="80%"></iframe>
+  <?php printMatinsSermon($data[2]); ?>
 </p>
 
 
@@ -241,7 +228,9 @@ $psalms = getMatinsPsalms($today, $psalmTable);
   ?>
 </p>
 
-<p><b>Devotional Prayer</b></p>
+<p><b>Devotional Prayer</b><br />
+  <?php printMatinsPrayer($data[2]); ?>
+</p>
 
 <p><b>Collect for the Day</b><br />
   <?php

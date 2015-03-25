@@ -1,5 +1,7 @@
 <?php
 
+require("simplehtmldom/simple_html_dom.php");
+
 // The master psalm array.
 $psalmTable = array(
   "lent" => array(
@@ -80,6 +82,8 @@ $psalmTable = array(
   "christmas13" => array("morning" => "99", "evening" => array("96","110")),
   "christmas14" => array("morning" => "72", "evening" => array("67","110"))
 );
+
+
 
 // Central Standard, suckaaaaas
 date_default_timezone_set("America/Mexico_City");
@@ -304,8 +308,33 @@ function getComplinePsalm(){
   return 4;
 }
 
+function getMatinsData(){
+ // This will return an array of the needed information. Other functions will be used to display the content.
+ $html = file_get_html("http://www.lhm.org/dailydevotions.asp");
+ $str = $html->find("i",0);
+ $parts = explode(" ", $str);
+ $verse = $parts[count($parts)-1];
+ $book = $parts[count($parts)-2];
+ $verse = substr($verse,0,-5);
+ $mainContent = $html->find("#mainContent p");
+ $sermonRaw = $mainContent[8];
+ $sermon = explode("<br><br>", $sermonRaw);
+ return array($book, $verse, $sermon);
+}
 
+function getMatinsAddress($data){
+  return $data[0] . "+" . $data[1];
+}
 
+function printMatinsSermon($data){
+  $count = count($data)-2;
+  for($i=0; $i<$count; $i++)
+    echo $data[$i] . "<br><br>";
+}
+
+function printMatinsPrayer($data){
+  echo substr($data[count($data)-2], 15, -4);
+}
 
 
 
