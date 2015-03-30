@@ -148,35 +148,51 @@ abstract class Element{
 }
 
 class Versicle implements Element{
+
+  private $responses = array(
+    "Matins" = array("lent" => "Praise to you, O Christ, King who comes to save us.",
+					 "advent" => "Praise to you, O Christ, Lamb of our salvation.",
+					 "other" => "Praise to you, O Christ, alleluia."
+	),
+	"Vespers" = array("lent" => "Praise to you, O Christ, Lamb of our salvation.",
+					  "advent" => "Praise to you, O Christ, King who comes to save us.",
+					  "other" => "Praise to you, O Christ, alleluia."
+	)
+	
   public function __construct($office, $season){
     $this->season = $season;
 	$this->office = $office;
   }
-  public function display(){
+  
+  // This set of responses is typical enough it merits its own method.
+  public function standardVersicle(){
     lecho("O Lord, open my lips.");
-	cecho("And my mouth will declare Your praise.");
+	cecho("And my mouth will declare your praise.");
 	lecho("Make haste, O God, to deliver me.");
-	cecho("Make haste to help me, O Lord. Glory be to the Father, and to the Son, and to the Holy Spirit; as it was in the beginning, is now, and will be forever, amen.");
+	cecho("Make to help me O Lord. Glory be to the Father and to the Son, and to the Holy Spirit; as it was in the beginning, is now, and will be forever. Amen.");  
   }
-  if($this->office == "Matins"){
-    if($season == "advent")
-      cecho("Praise to you, O Christ, King who comes to save us.");
-    else if($season == "lent")
-      cecho("Praise to you, O Christ, Lamb of our salvation.");
-    else
-      cecho("Praise to you, O Christ, alleluia.");    
-  }else if($this->office == "Vespers"){
-  
-  }else if($this->office == "Compline"){
-  
-  }else if($this->office == "Terce" || $this->office == "Sext" || $this->office == "None"){
-    if($season != "lent")
-	  cecho("Alleluia.");
+  public function display(){
+    if($this->office == "Matins" || $this->office == "Terce" ||
+	   $this->office == "Sext" || $this->office == "None" ||
+	   $this->office == "Vespers")
+	   standardVersicle();
+	if($this->office == "Matins" || $this->office == "Vespers"){
+	  if($this->season == "advent" || $this->season == "lent")
+	    cecho($this->responses[$this->office][$this->season];
+	  else
+	    cecho($this->responses[$this->office]["other"];
+	}
+	if($this->office == "Compline"){
+	  lecho("The Lord Almighty grant us a quiet night and peace at the last.");
+	  cecho("Amen.");
+	  lecho("It is good to give thanks to the Lord.");
+	  cecho("To sing praise to your name, O Most High.");
+	  lecho("To herald your love in the morning.");
+	  cecho("Your truth at the close of the day.");
+	}
   }
 }
 
-class Venite implements Element{
-}
 
 class Psalmoldy implements Element{
 }
