@@ -316,10 +316,13 @@ function getMatinsData(){
  $verse = $parts[count($parts)-1];
  $book = $parts[count($parts)-2];
  $verse = substr($verse,0,-5);
- $mainContent = $html->find("#mainContent p");
- $sermonRaw = $mainContent[8];
- $sermon = explode("<br><br>", $sermonRaw);
- return array($book, $verse, $sermon);
+ 
+ // This needs to be done differently. Instead of returning the sermon and prayer as one big lump, let's instead cut out their own parts. The content for the sermon ends after the italicized part which says what verses to read. Apparently this is always the 8th paragraph.
+ $mainContent = $html->find(".mainContent");
+ var_dump($mainContent->innertext);
+ 
+ 
+ return array($book, $verse, $sermon, $prayer);
 }
 
 function getMatinsAddress($data){
