@@ -10,9 +10,9 @@ class Office{
   protected $season; // Current church season.
   protected $day; // Days since Unix epoch.
   protected $dayOfWeek; // Day of the week.
-  public function display(){ // Requires every class to have a means of displaying its offices.
-    foreach($this->elements as $elem){
-	  $elem.display();
+  function display(){
+    foreach($this->elements as $e){
+	  $e->display();
 	}
   }
   function getSeason(){}
@@ -353,7 +353,7 @@ class Canticle extends Element{
       $this->lecho("Blessed be God the Father, the Son, and the Holy Spirit.");
       $this->cecho("O come, let us worship him.");
 	}else if($this->name == "Te Deum"){
-      lecho(
+      $this->lecho(
         "We praise you, O God; we acknowledge you to be the Lord<br />
         All the earth now worships you, the Father everlasting<br /> 
         To you all angels cry aloud, the heavens and all the powers therein<br />
@@ -397,7 +397,7 @@ class Canticle extends Element{
         O Lord, in you have I trusted; let me never be confounded.<br />
       ");
 	}else if($this->name == "Benedictus"){
-      lecho(
+      $this->lecho(
         "Blessed be the Lord God of Israel<br />
         For he has visited and redeemed his people<br />
         And has raised up a horn of salvation for us<br />
