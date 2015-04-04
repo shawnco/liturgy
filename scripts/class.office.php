@@ -135,6 +135,7 @@ class Compline extends Office{
 
 // The overall abstract class for the element of an office. Have no idea what they're properly called.
 abstract class Element{
+  protected $name;
   protected $season;
   protected $day;
   protected $dayOfWeek;
@@ -147,6 +148,9 @@ abstract class Element{
     echo "<b>C:</b> " . $msg . "<br />";
   }
   function getAudio($office,$name){
+  }
+  function showName(){
+    echo "<b>" . $this->name . "</b><br />";
   }
 }
 
@@ -163,6 +167,7 @@ class Versicle extends Element{
   );
 	
   public function __construct($office, $season){
+    $this->name = "Versicle";
     $this->season = $season;
 	$this->office = $office;
   }
@@ -175,6 +180,7 @@ class Versicle extends Element{
 	$this->cecho("Make to help me O Lord. Glory be to the Father and to the Son, and to the Holy Spirit; as it was in the beginning, is now, and will be forever. Amen.");  
   }
   public function display(){
+    $this->showName();
     if($this->office == "Matins" || $this->office == "Terce" ||
 	   $this->office == "Sext" || $this->office == "None" ||
 	   $this->office == "Vespers")
@@ -183,15 +189,15 @@ class Versicle extends Element{
 	  if($this->season == "advent" || $this->season == "lent")
 	    $this->cecho($this->responses[$this->office][$this->season]);
 	  else
-	    cecho($this->responses[$this->office]["other"]);
+	    $this->cecho($this->responses[$this->office]["other"]);
 	}
 	if($this->office == "Compline"){
-	  lecho("The Lord Almighty grant us a quiet night and peace at the last.");
-	  cecho("Amen.");
-	  lecho("It is good to give thanks to the Lord.");
-	  cecho("To sing praise to your name, O Most High.");
-	  lecho("To herald your love in the morning.");
-	  cecho("Your truth at the close of the day.");
+	  $this->lecho("The Lord Almighty grant us a quiet night and peace at the last.");
+	  $this->cecho("Amen.");
+	  $this->lecho("It is good to give thanks to the Lord.");
+	  $this->cecho("To sing praise to your name, O Most High.");
+	  $this->lecho("To herald your love in the morning.");
+	  $this->cecho("Your truth at the close of the day.");
 	}
   }
 }
@@ -199,29 +205,48 @@ class Versicle extends Element{
 
 class Psalmoldy extends Element{
   public function display(){}
+  public function __construct(){
+    $this->name = "Psalmody";
+  }
 }
 
 class Hymn extends Element{
-public function display(){}
+  public function display(){}
+  public function __construct(){
+    $this->name = "Hymn";
+  }
 }
 
 class Reading extends Element{
-public function display(){}
+  public function display(){}
+  public function __construct(){
+    $this->name = "Reading";
+  }
 }
 
 class LordsPrayer extends Element{
   // If there are no variables passed in the constructor, assume it's a little hour.
   public function display(){}
+  public function __construct(){
+    $this->name = "Lord's Prayer";
+  }
 }
 
 class Prayer extends Element{
   // Takes the office name and a boolean stating whether it's a collect.
   public function display(){}
+  public function __construct(){
+    $this->name = "Prayer";
+  }
 }
 
 class Kyrie extends Element{
   function display(){
+    $this->showName();
     $this->cecho("Lord, have mercy. Christ, have mercy. Lord, have mercy.");
+  }
+  public function __construct(){
+    $this->name = "Kyrie";
   }
 }
 
@@ -276,11 +301,13 @@ class Responsory extends Element{
   );
   
   public function __construct($o,$s){
+    $this->name = "Responsory";
     $this->office = $o;
     $this->season = $s;
   }
   
   public function display(){
+    $this->showName();
     if($this->office == "Matins"){
 	  if($this->season != "easter" && $this->season != "lent")
 	    $s = "other";
@@ -297,19 +324,19 @@ class Responsory extends Element{
 	    $s = "other";
       else
 	    $s = "lent";
-	  lecho($this->responses["Vespers"][$s]["verse1"]);
-      cecho($this->responses["Vespers"][$s]["refrain"]);
-	  lecho($this->responses["Vespers"][$s]["verse2"]);
-	  cecho($this->responses["Vespers"][$s]["refrain"]);
-	  lecho($this->responses["Vespers"][$s]["verse3"]);
-	  cecho($this->responses["Vespers"][$s]["refrain"]);	
+	  $this->lecho($this->responses["Vespers"][$s]["verse1"]);
+      $this->cecho($this->responses["Vespers"][$s]["refrain"]);
+	  $this->lecho($this->responses["Vespers"][$s]["verse2"]);
+	  $this->cecho($this->responses["Vespers"][$s]["refrain"]);
+	  $this->lecho($this->responses["Vespers"][$s]["verse3"]);
+	  $this->cecho($this->responses["Vespers"][$s]["refrain"]);	
 	}else if($this->office == "Compline"){
-	  lecho($this->responses["Compline"]["verse1"]);
-      cecho($this->responses["Compline"]["refrain"]);
-	  lecho($this->responses["Compline"]["verse2"]);
-	  cecho($this->responses["Compline"]["refrain"]);
-	  lecho($this->responses["Compline"]["verse3"]);
-	  cecho($this->responses["Compline"]["refrain"]);		
+	  $this->lecho($this->responses["Compline"]["verse1"]);
+      $this->cecho($this->responses["Compline"]["refrain"]);
+	  $this->lecho($this->responses["Compline"]["verse2"]);
+	  $this->cecho($this->responses["Compline"]["refrain"]);
+	  $this->lecho($this->responses["Compline"]["verse3"]);
+	  $this->cecho($this->responses["Compline"]["refrain"]);		
 	}else{
 	  echo "Responsory not found.";
 	}
@@ -318,12 +345,18 @@ class Responsory extends Element{
 
 class Canticle extends Element{
   // Currently, the canticles in the liturgy project are Venite, Te Deum, Benedictus, Magnificat, and Nunc Dimittis.
-  public $name;
-  public function __construct($n){
-    $this->name = $n;
+  public $canticleName;
+  public function __construct($cn){
+    $this->name = "Canticle";
+    $this->canticleName = $cn;
+  }
+  public function showCanticleName(){
+    echo "<i>" . $this->canticleName . "</i><br />";
   }
   public function display(){
-    if($this->name == "Venite"){
+    $this->showName();
+    $this->showCanticleName();
+    if($this->canticleName == "Venite"){
 	  $this->lecho("Blessed be God the Father, the Son, and the Holy Spirit.");
       $this->cecho("O come, let us worship him.");
       $this->lecho(
@@ -352,7 +385,7 @@ class Canticle extends Element{
         And ever shall be; world without end. Amen.");
       $this->lecho("Blessed be God the Father, the Son, and the Holy Spirit.");
       $this->cecho("O come, let us worship him.");
-	}else if($this->name == "Te Deum"){
+	}else if($this->canticleName == "Te Deum"){
       $this->lecho(
         "We praise you, O God; we acknowledge you to be the Lord<br />
         All the earth now worships you, the Father everlasting<br /> 
@@ -396,7 +429,7 @@ class Canticle extends Element{
         O Lord, let your mercy be upon us, as our trust is in you<br />
         O Lord, in you have I trusted; let me never be confounded.<br />
       ");
-	}else if($this->name == "Benedictus"){
+	}else if($this->canticleName == "Benedictus"){
       $this->lecho(
         "Blessed be the Lord God of Israel<br />
         For he has visited and redeemed his people<br />
@@ -431,22 +464,22 @@ class Canticle extends Element{
         Glory be to the Father and to the Son and to the Holy Spirit<br />
         As it was in the beginning, is now, and will be forever. Amen.
       ");
-	}else if($this->name == "Magnificat"){
-      lecho("Let my prayer rise before you as incense.");
-      cecho("And the lifting up of my hands at the evening sacrifice");
-      cecho("My soul magnifies the Lord, and my spirit rejoices in God, my Savior");
-      lecho("For He has regarded the lowliness of his hand-maiden");
-      cecho("For behold, from this day all generations will call me blessed");
-      lecho("For the Mighty One has done great things to me, and holy is his name");
-      cecho("And his mercy is on those who fear him from generation to generation");
-      lecho("He has shown strength with his arm; he has scattered the proud in the imagination of their hearts");
-      cecho("He has cast down the mighty from their thrones and has exalted the lowly");
-      lecho("He has filled the hungry with good things, and the rich he has sent empty away");
-      cecho("He has helped his servant Israel in remembrance of his mercy as he spoke to our fathers, to Abraham and to his seed forever");
-      cecho("Glory be to the Father and to the Son and to the Holy Spirit; as it was in the beginning, is now and will be forever. Amen."); 	
-	}else if($this->name == "Nunc Dimittis"){
-      lecho("Guide us waking, O Lord, and guard us sleeping that awake we may watch with Christ and asleep  we may rest in peace");
-      cecho("Lord, now you let your servant go in peace; your word has been fulfilled. My own eyes have seen the salvation which you have prepared in the sight of every people: a light to reveal you to the nations and the glory of your people Israel. Glory be to the Father and to the Son and to the Holy Spirit; as it was in the beginning, is now, and will be forever. Amen. Guide us waking, O Lord, and guard us sleeping that awake we may watch with Christ and asleep we may rest in peace.");	
+	}else if($this->canticleName == "Magnificat"){
+      $this->lecho("Let my prayer rise before you as incense.");
+      $this->cecho("And the lifting up of my hands at the evening sacrifice");
+      $this->cecho("My soul magnifies the Lord, and my spirit rejoices in God, my Savior");
+      $this->lecho("For He has regarded the lowliness of his hand-maiden");
+      $this->cecho("For behold, from this day all generations will call me blessed");
+      $this->lecho("For the Mighty One has done great things to me, and holy is his name");
+      $this->cecho("And his mercy is on those who fear him from generation to generation");
+      $this->lecho("He has shown strength with his arm; he has scattered the proud in the imagination of their hearts");
+      $this->cecho("He has cast down the mighty from their thrones and has exalted the lowly");
+      $this->lecho("He has filled the hungry with good things, and the rich he has sent empty away");
+      $this->cecho("He has helped his servant Israel in remembrance of his mercy as he spoke to our fathers, to Abraham and to his seed forever");
+      $this->cecho("Glory be to the Father and to the Son and to the Holy Spirit; as it was in the beginning, is now and will be forever. Amen."); 	
+	}else if($this->canticleName == "Nunc Dimittis"){
+      $this->lecho("Guide us waking, O Lord, and guard us sleeping that awake we may watch with Christ and asleep  we may rest in peace");
+      $this->cecho("Lord, now you let your servant go in peace; your word has been fulfilled. My own eyes have seen the salvation which you have prepared in the sight of every people: a light to reveal you to the nations and the glory of your people Israel. Glory be to the Father and to the Son and to the Holy Spirit; as it was in the beginning, is now, and will be forever. Amen. Guide us waking, O Lord, and guard us sleeping that awake we may watch with Christ and asleep we may rest in peace.");	
 	}else{
 	  echo "Canticle not found.";
 	}
@@ -455,17 +488,19 @@ class Canticle extends Element{
 
 class Benediction extends Element{
   public function __construct($o){
+    $this->name = "Benedicamus and Benediction";
     $this->office = $o;
   }
   public function display(){
+    $this->showName();
     if($this->office == "Matins" || $this->office == "Vespers"){
 	  $this->lecho("Let us bless the Lord.");
       $this->cecho("Thanks be to God.");
       $this->lecho("The grace of our Lord Jesus Christ and the love of God and the communion of the Holy Spirit be with you all.");
       $this->cecho("Amen.");
 	}else if($this->office == "Compline"){
-	  lecho("The almighty and merciful Lord, the Father, the Son, and the Holy Spirit, bless you and keep you.");
-      cecho("Amen.");
+	  $this->lecho("The almighty and merciful Lord, the Father, the Son, and the Holy Spirit, bless you and keep you.");
+      $this->cecho("Amen.");
 	}else{
 	  echo "Benediction not found.";
 	}

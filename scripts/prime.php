@@ -11,6 +11,7 @@ class Prime extends Office{
 	  new Canticle("Venite"),
 	  new Responsory($this->name, $this->season),
 	  new Kyrie(),
+	  new Canticle("Magnificat"),
 	  new Benediction("Matins")
 	);
 	echo "A new Prime has been constructed.";
