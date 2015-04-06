@@ -3,6 +3,8 @@
 // Version number, also good for testing purposes.
 $version = "0.1";
 
+// -------- OFFICES --------
+
 // The overall abstract class for the office.
 class Office{
   protected $name; // Name of this office.
@@ -21,6 +23,7 @@ class Office{
   function disclaimer(){}
 }
 
+// Matins
 class Matins extends Office{
   function __construct(){
     $this->name = "Matins";
@@ -43,6 +46,7 @@ class Matins extends Office{
   }  
 }
 
+// Terce
 class Terce extends Office{
   function __construct(){
     $this->name = "Terce";
@@ -59,6 +63,7 @@ class Terce extends Office{
   }
 }
 
+// Sext
 class Sext extends Office{
   function __construct(){
     $this->name = "Terce";
@@ -75,6 +80,7 @@ class Sext extends Office{
   }
 }
 
+// None
 class None extends Office{
   function __construct(){
     $this->name = "Terce";
@@ -91,6 +97,7 @@ class None extends Office{
   }
 }
 
+// Vespers
 class Vespers extends Office{
   function __construct(){
     $this->name = "Vespers";
@@ -113,6 +120,7 @@ class Vespers extends Office{
   }
 }
 
+// Compline
 class Compline extends Office{
   function __construct(){
     $this->name = "Compline";
@@ -132,6 +140,8 @@ class Compline extends Office{
 	);
   }	  
 }
+
+// -------- ELEMENTS --------
 
 // The overall abstract class for the element of an office. Have no idea what they're properly called.
 abstract class Element{
@@ -154,6 +164,7 @@ abstract class Element{
   }
 }
 
+// Versicle
 class Versicle extends Element{
   private $responses = array(
     "Matins" => array("lent" => "Praise to you, O Christ, King who comes to save us.",
@@ -172,7 +183,6 @@ class Versicle extends Element{
 	$this->office = $office;
   }
   
-  // This set of responses is typical enough it merits its own method.
   public function standardVersicle(){
     $this->lecho("O Lord, open my lips.");
 	$this->cecho("And my mouth will declare your praise.");
@@ -202,7 +212,7 @@ class Versicle extends Element{
   }
 }
 
-
+// Psalmody
 class Psalmoldy extends Element{
   public function display(){}
   public function __construct(){
@@ -210,13 +220,7 @@ class Psalmoldy extends Element{
   }
 }
 
-class Hymn extends Element{
-  public function display(){}
-  public function __construct(){
-    $this->name = "Hymn";
-  }
-}
-
+// Reading
 class Reading extends Element{
   public function display(){}
   public function __construct(){
@@ -224,6 +228,7 @@ class Reading extends Element{
   }
 }
 
+// Lord's Prayer
 class LordsPrayer extends Element{
   // If there are no variables passed in the constructor, assume it's a little hour.
   public function display(){}
@@ -232,6 +237,7 @@ class LordsPrayer extends Element{
   }
 }
 
+// Prayer
 class Prayer extends Element{
   // Takes the office name and a boolean stating whether it's a collect.
   public function display(){}
@@ -240,6 +246,7 @@ class Prayer extends Element{
   }
 }
 
+// Kyrie
 class Kyrie extends Element{
   function display(){
     $this->showName();
@@ -250,6 +257,7 @@ class Kyrie extends Element{
   }
 }
 
+// Responsory
 class Responsory extends Element{
   public $responses = array(
     "Matins" => array(
@@ -343,6 +351,7 @@ class Responsory extends Element{
   }  
 }
 
+// Canticle
 class Canticle extends Element{
   // Currently, the canticles in the liturgy project are Venite, Te Deum, Benedictus, Magnificat, and Nunc Dimittis.
   public $canticleName;
@@ -486,6 +495,7 @@ class Canticle extends Element{
   }
 }
 
+// Benediction
 class Benediction extends Element{
   public function __construct($o){
     $this->name = "Benedicamus and Benediction";
