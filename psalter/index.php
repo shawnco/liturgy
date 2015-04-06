@@ -65,23 +65,23 @@ function checkDOW($dow, $d){
   </tr> 
   <tr>
     <td>Sext</td>
-    <td><?php echo $psalmPairs[$day % 8][0]; ?></td>
-    <td><?php echo $psalmPairs[(($day % 8)+1) % 8][0]; ?> </td>
-    <td><?php echo $psalmPairs[(($day % 8)+2) % 8][0]; ?> </td>
-    <td><?php echo $psalmPairs[(($day % 8)+3) % 8][0]; ?> </td>
-    <td><?php echo $psalmPairs[(($day % 8)+4) % 8][0]; ?> </td>
-    <td><?php echo $psalmPairs[(($day % 8)+5) % 8][0]; ?> </td>
-    <td><?php echo $psalmPairs[(($day % 8)+6) % 8][0]; ?> </td>
+    <td><?php echo $psalmPairs[(($day % 8) - $dow) % 8][0]; ?></td>
+    <td><?php echo $psalmPairs[(($day % 8) - $dow + 1) % 8][0]; ?> </td>
+    <td><?php echo $psalmPairs[(($day % 8) - $dow + 2) % 8][0]; ?> </td>
+    <td><?php echo $psalmPairs[(($day % 8) - $dow + 3) % 8][0]; ?> </td>
+    <td><?php echo $psalmPairs[(($day % 8) - $dow + 4) % 8][0]; ?> </td>
+    <td><?php echo $psalmPairs[(($day % 8) - $dow + 5) % 8][0]; ?> </td>
+    <td><?php echo $psalmPairs[(($day % 8) - $dow + 6) % 8][0]; ?> </td>
   </tr> 
   <tr>
     <td>None</td>
-    <td><?php echo $psalmPairs[$day % 8][1]; ?></td>
-    <td><?php echo $psalmPairs[(($day % 8)+1) % 8][1]; ?> </td>
-    <td><?php echo $psalmPairs[(($day % 8)+2) % 8][1]; ?> </td>
-    <td><?php echo $psalmPairs[(($day % 8)+3) % 8][1]; ?> </td>
-    <td><?php echo $psalmPairs[(($day % 8)+4) % 8][1]; ?> </td>
-    <td><?php echo $psalmPairs[(($day % 8)+5) % 8][1]; ?> </td>
-    <td><?php echo $psalmPairs[(($day % 8)+6) % 8][1]; ?> </td>
+    <td><?php echo $psalmPairs[(($day % 8) - $dow) % 8][1]; ?></td>
+    <td><?php echo $psalmPairs[(($day % 8) - $dow + 1) % 8][1]; ?> </td>
+    <td><?php echo $psalmPairs[(($day % 8) - $dow + 2) % 8][1]; ?> </td>
+    <td><?php echo $psalmPairs[(($day % 8) - $dow + 3) % 8][1]; ?> </td>
+    <td><?php echo $psalmPairs[(($day % 8) - $dow + 4) % 8][1]; ?> </td>
+    <td><?php echo $psalmPairs[(($day % 8) - $dow + 5) % 8][1]; ?> </td>
+    <td><?php echo $psalmPairs[(($day % 8) - $dow + 6) % 8][1]; ?> </td>
   </tr> 
   <tr>
     <td>Vespers</td>
