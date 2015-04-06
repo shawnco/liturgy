@@ -72,3 +72,9 @@ td{
   border: 1px solid;
   text-align: center;
 }
+
+/* This is specific to the psalter page. */
+#today{
+  background-color: #3d4047;
+  color: #fff3d0;
+}

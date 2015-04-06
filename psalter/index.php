@@ -2,6 +2,7 @@
 
 require("../scripts/functions.php");
 $day = epochTime();
+$dow = dayOfWeek();
 $season = getSeason($day);
 $psalmPairs = array(
   array("120", "121"),
@@ -13,6 +14,12 @@ $psalmPairs = array(
   array("132:1-9", "132:10-18"),
   array("133", "134")
 );
+
+function checkDOW($dow, $d){
+  if($dow == $d){
+    ?> id="today"<?php
+  }
+}
 
  ?> 
 <p>A <b>psalter</b> is an arrangement of the psalms to be read according to a schedule. It lists what psalms are to be recited at what points during the day. Monks typically follow a psalter that recites all 150 psalms in one week or one month.</p>
@@ -28,13 +35,13 @@ $psalmPairs = array(
 <table border="1">
   <tr>
     <th>&nbsp;</th>
-    <th>Sunday</th>
-    <th>Monday</th>
-    <th>Tuesday</th>
-    <th>Wednesday</th>
-    <th>Thursday</th>
-    <th>Friday</th>
-    <th>Saturday</th>
+    <th <?php checkDOW($dow, 0); ?>>Sunday</th>
+    <th <?php checkDOW($dow, 1); ?>>Monday</th>
+    <th <?php checkDOW($dow, 2); ?>>Tuesday</th>
+    <th <?php checkDOW($dow, 3); ?>>Wednesday</th>
+    <th <?php checkDOW($dow, 4); ?>>Thursday</th>
+    <th <?php checkDOW($dow, 5); ?>>Friday</th>
+    <th <?php checkDOW($dow, 6); ?>>Saturday</th>
   </tr>
   <tr>
     <td>Matins</td>
