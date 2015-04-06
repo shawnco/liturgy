@@ -1,4 +1,20 @@
-<?php $url = "http://" . $_SERVER["HTTP_HOST"]; $pageHead = "About the Psalter"; $pageTitle = "About the Psalter"; require("../template/template-top.php"); ?> 
+<?php $url = "http://" . $_SERVER["HTTP_HOST"]; $pageHead = "About the Psalter"; $pageTitle = "About the Psalter"; require("../template/template-top.php");
+
+require("../scripts/functions.php");
+$day = epochTime();
+$season = getSeason($day);
+$psalmPairs = array(
+  array("120", "121"),
+  array("122", "123"),
+  array("124", "125"),
+  array("126", "127"),
+  array("128", "129"),
+  array("130", "131"),
+  array("132:1-9", "132:10-18"),
+  array("133", "134")
+);
+
+ ?> 
 <p>A <b>psalter</b> is an arrangement of the psalms to be read according to a schedule. It lists what psalms are to be recited at what points during the day. Monks typically follow a psalter that recites all 150 psalms in one week or one month.</p>
 <p>The psalter of this project is an amalgation of different setups, along with a personal addition. The PLG is intended for people who don't have the time to read all 150 psalms in a week, or even a month. Instead it follows a system of psalms to be read on a rotating basis depending church season, day of week, or time of the day.</p>
 <p>Here's a breakdown of how the psalter is devised.</p>
@@ -22,13 +38,13 @@
   </tr>
   <tr>
     <td>Matins</td>
-    <td>150<br /> </td>
-    <td>145<br /> </td>
-    <td>146<br /> </td>
-    <td>147:1-11<br /> </td>
-    <td>147:12-20<br /> </td>
-    <td>148<br /> </td>
-    <td>149<br /> </td>
+    <td><?php echo $psalmTable[$season][0]["morning"]; ?><br />150</td>
+    <td><?php echo $psalmTable[$season][1]["morning"]; ?><br />145</td>
+    <td><?php echo $psalmTable[$season][2]["morning"]; ?><br />146</td>
+    <td><?php echo $psalmTable[$season][3]["morning"]; ?><br />147:1-11</td>
+    <td><?php echo $psalmTable[$season][4]["morning"]; ?><br />147:12-20</td>
+    <td><?php echo $psalmTable[$season][5]["morning"]; ?><br />148</td>
+    <td><?php echo $psalmTable[$season][6]["morning"]; ?><br />149</td>
   </tr>        
   <tr>
     <td>Terce</td>
@@ -42,33 +58,33 @@
   </tr> 
   <tr>
     <td>Sext</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
+    <td><?php echo $psalmPairs[$day % 8][0]; ?></td>
+    <td><?php echo $psalmPairs[(($day % 8)+1) % 8][0]; ?> </td>
+    <td><?php echo $psalmPairs[(($day % 8)+2) % 8][0]; ?> </td>
+    <td><?php echo $psalmPairs[(($day % 8)+3) % 8][0]; ?> </td>
+    <td><?php echo $psalmPairs[(($day % 8)+4) % 8][0]; ?> </td>
+    <td><?php echo $psalmPairs[(($day % 8)+5) % 8][0]; ?> </td>
+    <td><?php echo $psalmPairs[(($day % 8)+6) % 8][0]; ?> </td>
   </tr> 
   <tr>
     <td>None</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
+    <td><?php echo $psalmPairs[$day % 8][1]; ?></td>
+    <td><?php echo $psalmPairs[(($day % 8)+1) % 8][1]; ?> </td>
+    <td><?php echo $psalmPairs[(($day % 8)+2) % 8][1]; ?> </td>
+    <td><?php echo $psalmPairs[(($day % 8)+3) % 8][1]; ?> </td>
+    <td><?php echo $psalmPairs[(($day % 8)+4) % 8][1]; ?> </td>
+    <td><?php echo $psalmPairs[(($day % 8)+5) % 8][1]; ?> </td>
+    <td><?php echo $psalmPairs[(($day % 8)+6) % 8][1]; ?> </td>
   </tr> 
   <tr>
     <td>Vespers</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
+    <td><?php echo $psalmTable[$season][0]["evening"][0] . "<br />" . $psalmTable[$season][0]["evening"][1];?></td>
+    <td><?php echo $psalmTable[$season][1]["evening"][0] . "<br />" . $psalmTable[$season][1]["evening"][1];?> </td>
+    <td><?php echo $psalmTable[$season][2]["evening"][0] . "<br />" . $psalmTable[$season][2]["evening"][1];?> </td>
+    <td><?php echo $psalmTable[$season][3]["evening"][0] . "<br />" . $psalmTable[$season][3]["evening"][1];?> </td>
+    <td><?php echo $psalmTable[$season][4]["evening"][0] . "<br />" . $psalmTable[$season][4]["evening"][1];?> </td>
+    <td><?php echo $psalmTable[$season][5]["evening"][0] . "<br />" . $psalmTable[$season][5]["evening"][1];?> </td>
+    <td><?php echo $psalmTable[$season][6]["evening"][0] . "<br />" . $psalmTable[$season][6]["evening"][1];?> </td>
   </tr> 
   <tr>
     <td>Compline</td>
