@@ -1,7 +1,7 @@
 <?php
 
 // Version number, also good for testing purposes.
-$version = "0.1";
+$version = "0.2";
 
 // -------- OFFICES --------
 
@@ -18,18 +18,27 @@ class Office{
 	}
   }
   function getSeason(){}
-  function getDay(){}
-  function getDayOfWeek(){}
-  function disclaimer(){}
+  function getDay(){
+  }
+  function getDayOfWeek(){
+    return date("w");
+  }
+  
+  // A disclaimer for legal purposes.
+  function disclaimer(){
+    echo "<p><i>Audio is from the <a href='http://www.lcms.org/resources/audio'>LCMS website</a> and protected under fair use policy, as this is non-commercial. </i></p>";
+  }
 }
 
 // Matins
 class Matins extends Office{
+  protected $collect;
   function __construct(){
     $this->name = "Matins";
 	$this->season = $this->getSeason(); 
 	$this->day = $this->getDay();
 	$this->dayOfWeek = $this->getDayOfWeek();
+	$this->collect = "O Lord, our heavenly Father, almighty and everlasting God, you have safely brought us to the beginning of this day. Defend us in the same with your mighty power and grant that this day we fall into no sin, neither run into any kind of danger, but that all our doings, being ordered by your governance, may be righteous in your sight; through Jesus Christ, your son, our Lord, who lives and reigns with you and the Holy Spirit, one God, now and forever.";
     $this->elements = array(
 	  new Versicle("Matins",$this->season),
 	  new Canticle(),
@@ -40,7 +49,8 @@ class Matins extends Office{
 	  new Kyrie(),
 	  new LordsPrayer("Matins",$this->day),
 	  new Salutation($this->day),
-	  new Prayer("Matins",true),
+	  new Prayer($this->collect),
+	  new Prayer(),
 	  new Benediction()
 	);
   }  
@@ -99,11 +109,13 @@ class None extends Office{
 
 // Vespers
 class Vespers extends Office{
+  protected $collect;
   function __construct(){
     $this->name = "Vespers";
 	$this->season = $this->getSeason();
 	$this->day = $this->getDay();
 	$this->dayOfWeek = $this->getDayOfWeek();
+	$this->collect = "O God, from whom come all holy desires, all good counsels, and all just works, give to us, your servants, that peace which the world cannot give, that our hearts may be set to obey your commandments and also that we, being defended from the fear of our enemies, may live in peace and quietness; through Jesus Christ, Your Son, our Lord, who lives and reigns with you and the Holy Spirit, one God, now and forever.";
 	$this->elements = array(
 	  new Veriscle("Vespers",$this->season),
 	  new Psalmody("Vespers",$this->season, $this->dayOfWeek),
@@ -113,8 +125,8 @@ class Vespers extends Office{
 	  new Kyrie(),
 	  new LordsPrayer("Vespers"),
 	  new Salutation("Vespers",$this->day),
-	  new Prayer("Vespers",false),
-	  new Prayer("Vespers",true),
+	  new Prayer(),
+	  new Prayer($this->collect),
 	  new Benediction(),
 	);
   }
@@ -240,9 +252,14 @@ class LordsPrayer extends Element{
 // Prayer
 class Prayer extends Element{
   // Takes the office name and a boolean stating whether it's a collect.
-  public function display(){}
-  public function __construct(){
+  protected $prayer;
+  public function display(){
+    $this->showName();
+	echo $this->prayer . "<br />";
+  }
+  public function __construct($p){
     $this->name = "Prayer";
+	$this->prayer = $p;
   }
 }
 
