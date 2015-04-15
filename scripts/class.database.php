@@ -87,7 +87,7 @@ class Database{
 
   // Make a new connection.
   public function __construct(){
-    $this->con = new PDO("mysql:dbname=bible;host=localhost", "shawntc", "daftpunk1!");
+    $this->con = new PDO("mysql:dbname=$DBNAME;host=$DBHOST", $DBUSERNAME, $DBPASSWORD);
 	echo "Connection made?";
   }
   

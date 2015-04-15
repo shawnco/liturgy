@@ -4,5 +4,6 @@
 $USERNAME = "";
 $PASSWORD = "";
 $DBNAME = "";
+$DBHOST = ""
 
 ?>
