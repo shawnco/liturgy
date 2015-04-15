@@ -1,7 +1,5 @@
 <?
-
 // -------- ELEMENTS --------
-
 // The overall abstract class for the element of an office. Have no idea what they're properly called.
 abstract class Element{
   protected $name;
@@ -22,7 +20,6 @@ abstract class Element{
     echo "<b>" . $this->name . "</b><br />";
   }
 }
-
 // Versicle
 class Versicle extends Element{
   private $responses = array(
@@ -70,7 +67,6 @@ class Versicle extends Element{
 	}
   }
 }
-
 // Psalmody
 class Psalmoldy extends Element{
   public function display(){}
@@ -78,7 +74,6 @@ class Psalmoldy extends Element{
     $this->name = "Psalmody";
   }
 }
-
 // Reading
 class Reading extends Element{
   public function display(){}
@@ -86,7 +81,6 @@ class Reading extends Element{
     $this->name = "Reading";
   }
 }
-
 // Lord's Prayer
 class LordsPrayer extends Element{
   // If there are no variables passed in the constructor, assume it's a little hour.
@@ -95,7 +89,6 @@ class LordsPrayer extends Element{
     $this->name = "Lord's Prayer";
   }
 }
-
 // Prayer
 class Prayer extends Element{
   // Takes the office name and a boolean stating whether it's a collect.
@@ -109,7 +102,6 @@ class Prayer extends Element{
 	$this->prayer = $p;
   }
 }
-
 // Kyrie
 class Kyrie extends Element{
   function display(){
@@ -120,7 +112,6 @@ class Kyrie extends Element{
     $this->name = "Kyrie";
   }
 }
-
 // Responsory
 class Responsory extends Element{
   public $responses = array(
@@ -214,7 +205,6 @@ class Responsory extends Element{
 	}
   }  
 }
-
 // Canticle
 class Canticle extends Element{
   // Currently, the canticles in the liturgy project are Venite, Te Deum, Benedictus, Magnificat, and Nunc Dimittis.
@@ -237,21 +227,17 @@ class Canticle extends Element{
         Let us make a joyful noise to the Rock of our salvation.<br />
         Let us come into His presence with thanksgiving;<br />
         Let us make a joyful noise unto Him with songs of praise.<br /> <br />    
-
         For the Lord is a great God<br />
         And a great King above all gods.<br />
         The deep places of the Earth are in his hand<br />
         The strength of the hills is His also.<br /><br />
-
         The sea is His, for he made it<br />
         And His hand formed the dry land.<br />
         Oh, come let us worship and bow down;<br />
         Let us kneel before the Lord our maker.<br /><br />
-
         For He is our God<br />
         And we are the people of His pasture <br />
         And the sheep of His hand.<br /><br />
-
         Glory be to the Father and to the Son<br />
         And to the Holy Spirit<br />
         As it was in the beginning, is now,<br />
@@ -264,20 +250,16 @@ class Canticle extends Element{
         All the earth now worships you, the Father everlasting<br /> 
         To you all angels cry aloud, the heavens and all the powers therein<br />
         To you cherubim and seraphim continually do cry:<br /><br />
-
         Holy, holy, holy, Lord God of Sabaoth<br />
         heaven and earth are full of the majesty of your glory<br />
         The glorious company of the apostles praise you<br />
         The goodly fellowship of the prophets praise you<br /><br />
-
         The noble army of martyrs praise you<br />
         The holy Church throughout all the world does acknowledge you<br />
         The Father of an infinite majesty; your adorable, true, and only Son<br />
         also the Holy Ghost, the Comforter<br /><br />
-
         You are the king of glory, O Christ<br />
         You are the everlasting Son of the Father.<br /><br />
-
         When you took upon yourself to deliver man<br />
         You humbled yourself to be born of a virgin<br />
         When you had overcome the sharpness of death<br />
@@ -286,17 +268,14 @@ class Canticle extends Element{
         In the glory of the Father<br />
         We believe that you will come<br />
         to be our judge<br /><br />
-
         Therefore we pray you to help your servants<br />
         Whom you have redeemed with your precious blood<br />
         Make them to be numbered with your saints<br />
         In glory everlasting<br /><br />
-
         O Lord, save your people and bless your heritage<br />
         Govern them and lift them up forever<br />
         Day by day we magnify you<br />
         And we worship your name forever and ever<br /><br />
-
         Grant, O Lord, to keep us this day without sin<br />
         O Lord, have mercy upon us, have mercy upon us<br />
         O Lord, let your mercy be upon us, as our trust is in you<br />
@@ -308,32 +287,26 @@ class Canticle extends Element{
         For he has visited and redeemed his people<br />
         And has raised up a horn of salvation for us<br />
         In the house of his servant David<br /><br />
-
         As he spoke by the mouth of his holy prophets,<br />
         Who have been since the world began<br />
         That we should be saved from our enemies<br />
         And from the hand of all who hate us<br /><br />
-
         To perform the mercy promised to our fathers<br />
         And to remember his holy covenant<br />
         The oath that he swore to our father Abraham<br />
         To guarantee us that we<br /><br />
-
         Being delivered from the hand of our enemies<br />
         Might serve him without fear<br />
         In holiness and righteousness before him<br />
         All the days of our life<br /><br />
-
         And you, child, will be called the prophet of the Most High<br />
         For you will go before the Lord to prepare his ways<br />
         To give knowledge of salvation to his people<br />
         In the forgiveness of their sins<br /><br />
-
         Through the tender mercy of our God<br />
         When the day shall dawn upon us from on high<br />
         To give light to those who sit in darkness and in the shadow of death<br />
         To guide our feet into the way of peace<br /><br />
-
         Glory be to the Father and to the Son and to the Holy Spirit<br />
         As it was in the beginning, is now, and will be forever. Amen.
       ");
@@ -358,7 +331,6 @@ class Canticle extends Element{
 	}
   }
 }
-
 // Benediction
 class Benediction extends Element{
   public function __construct($o){
@@ -380,5 +352,4 @@ class Benediction extends Element{
 	}
   }
 }
-
 ?>
