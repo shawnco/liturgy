@@ -6,7 +6,7 @@
  * @author Shawn Contant <shawnc366@gmail.com>
  */
 class VespersVersicles extends Element {
-     private $name = 'Versicles';
+     protected $name = 'Versicles';
      private $responses = array(
           'lent' => 'Praise to you, O Christ, Lamb of our salvation.',
           'advent' => 'Praise to you, O Christ, King who comes to save us.',

@@ -8,7 +8,7 @@
 class LordsPrayer extends Element {
      protected $name = 'Lord\'s Prayer';
      private $text = array(
-         'old' => 'Our Father, who art in Heaven<br />Hallowed be thy name<br />Thy kingdom come<br />Thy will be done<br />On Earth as it is in Heaven<br />Give us our daily bread</br >And forgive us our tresspasses<br />As we forgive those who tresspass against us<br />And lead us not into temptation<br />But deliver us from evil<br />For thine is the kingdom, and the power, and the glory forever and ever, amen',
+         'old' => 'Our Father, who art in Heaven<br />Hallowed be thy name<br />Thy kingdom come<br />Thy will be done<br />On Earth as it is in Heaven<br />Give us this day our daily bread</br >And forgive us our tresspasses<br />As we forgive those who tresspass against us<br />And lead us not into temptation<br />But deliver us from evil<br />For thine is the kingdom, and the power, and the glory forever and ever, amen',
          'modern' => 'Our Father in Heaven<br />Hallowed be your name<br />Your kingdom come<br />Your will be done<br />On Earth as it is in Heaven<br />Give us today our daily bread<br />Forgive our sins, as we forgive those who sin against us<br />And lead us not into temptation<br />But deliver us from evil<br />For the kingdom, the power, and the glory are yours, now and forever, amen.'
      );
      
@@ -29,7 +29,7 @@ class LordsPrayer extends Element {
           }else{
                // For the non-little-hours there are three variations of the LP to choose from.
                // Each of these hours has an offset so that the variations are constantly cycled through.
-               $variations = array('matins' => 0, 'vespers' => 1, 'compline' => 2);
+               $variations = array('Matins' => 0, 'Vespers' => 1, 'Compline' => 2);
                $lp = ($variations[$this->office] + floor(time()/86400)) % 2;
                
                if($lp == 0){

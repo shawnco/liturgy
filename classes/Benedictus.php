@@ -10,11 +10,13 @@ class Benedictus extends Element {
      
      public function __construct(){
           parent::__construct();
+          $this->antiphon = new BenedictusAntiphon();
      }
      
      public function display(){
           $this->showName();
           $this->getAudio('matins', 'benedictus');
+          $this->lecho($this->antiphon->display());
           $this->lecho(
                'Blessed be the Lord God of Israel<br />
                For he has visited and redeemed his people<br />
@@ -43,6 +45,7 @@ class Benedictus extends Element {
                Glory be to the Father and to the Son and to the Holy Spirit<br />
                As it was in the beginning, is now, and will be forever. Amen.'
           );
+          $this->lecho($this->antiphon->display());
      }
 }
 

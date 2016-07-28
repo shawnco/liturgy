@@ -9,12 +9,13 @@ class TeDeum extends Element {
      private $name = 'Te Deum';
      
      public function __construct(){
-          parent::__construct();
+          $this->antiphon = new TeDeumAntiphon();
      }
      
      public function display(){
           $this->showName();
           $this->getAudio('matins', 'te-deum');
+          $this->lecho($this->antiphon->display());
           $this->lecho(
                'We praise you, O God; we acknowledge you to be the Lord<br />
                All the earth now worships you, the Father everlasting<br /> 
@@ -51,6 +52,7 @@ class TeDeum extends Element {
                O Lord, let your mercy be upon us, as our trust is in you<br />
                O Lord, in you have I trusted; let me never be confounded.<br />'
           );
+          $this->lecho($this->antiphon->display());
      }
 }
 

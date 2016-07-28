@@ -30,8 +30,8 @@ abstract class Element {
      // Grabs the audio and generates the HTML
      function getAudio($office,$name){
           echo '<audio controls>';
-          echo '  <source src="../' . $office . '-audio/' . $src . '.ogg" />';
-          echo '  <source src="../' . $office . '-audio/' . $src . '.mp3" />';
+          echo '  <source src="../' . $office . '-audio/' . $name . '.ogg" />';
+          echo '  <source src="../' . $office . '-audio/' . $name . '.mp3" />';
           echo '</audio><br />';          
      }
      
