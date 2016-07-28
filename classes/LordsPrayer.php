@@ -30,7 +30,7 @@ class LordsPrayer extends Element {
                // For the non-little-hours there are three variations of the LP to choose from.
                // Each of these hours has an offset so that the variations are constantly cycled through.
                $variations = array('Matins' => 0, 'Vespers' => 1, 'Compline' => 2);
-               $lp = ($variations[$this->office] + floor(time()/86400)) % 2;
+               $lp = ($variations[$this->office] + floor(time()/86400)) % 3;
                
                if($lp == 0){
                     $this->getAudio($this->office, 'lords-prayer-196');
