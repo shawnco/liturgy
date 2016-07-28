@@ -5,11 +5,11 @@
  *
  * @author Shawn Contant <shawnc366@gmail.com>
  */
+
 class Venite extends Element {
-     private $name = 'Venite';
+     protected $name = 'Venite';
      
      public function __construct(){
-          parent::__construct();
      }
      
      public function display(){

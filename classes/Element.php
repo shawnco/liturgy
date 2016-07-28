@@ -6,6 +6,7 @@
  * 
  */
 
+date_default_timezone_set('America/Mexico_City');
 abstract class Element {
      protected $name;
      protected $season;

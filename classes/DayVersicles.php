@@ -6,7 +6,7 @@
  */
 
 class DayVersicles extends Element {
-     private $name = 'Versicles';
+     protected $name = 'Versicles';
      private $responses = array(
          'lent' => 'Praise to You, O Christ, King who comes to save us.',
          'advent' => 'Praise to you, O Christ, Lamb of our salvation.',
