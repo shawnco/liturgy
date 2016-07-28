@@ -10,13 +10,13 @@ class Terce extends Office {
      
      public function __construct(){
           $this->elements = array(
-              new DayVersicles($this->name),
-              //new TercePsalms(),
-              //new TerceHymn(),
-              new TerceReadings(),
-              //new TerceResponsory(),
-              new Kyrie($this->name),
-              new LordsPrayer($this->name)
+              'DayVersicles',
+              //'TercePsalms',
+              //'TerceHymn',
+              //'TerceReadings',
+              //'TerceResponsory',
+              'Kyrie',
+              'LordsPrayer'
           );
      }
 }

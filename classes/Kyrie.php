@@ -6,10 +6,9 @@
  * @author Shawn Contant <shawnc366@gmail.com>
  */
 class Kyrie extends Element{
-     private $name = 'Kyrie';
+     protected $name = 'Kyrie';
      
      public function __construct($office){
-          parent::__construct();
           $this->office = $office;
      }
      

@@ -11,7 +11,9 @@ class Office{
      
      public function display(){
           foreach($this->elements as $e){
-               $e->display();
+               include('classes/' . $e . '.php');
+               $el = new $e($this->name);
+               $el->display();
           }
      }
 }
