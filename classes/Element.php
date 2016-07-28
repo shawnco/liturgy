@@ -18,21 +18,25 @@ abstract class Element {
      
      // Lecturn says
      function lecho($msg){
-          echo "<b>L:</b> " . $msg . "<br />";
+          echo '<b>L:</b> ' . $msg . '<br />';
      }
      
      // Congregation says
      function cecho($msg){
-          echo "<b>C:</b> " . $msg . "<br />";
+          echo '<b>C:</b> ' . $msg . '<br />';
      }
      
      // Grabs the audio and generates the HTML
      function getAudio($office,$name){
+          echo '<audio controls>';
+          echo '  <source src="../' . $office . '-audio/' . $src . '.ogg" />';
+          echo '  <source src="../' . $office . '-audio/' . $src . '.mp3" />';
+          echo '</audio><br />';          
      }
      
      // Displays element name
      function showName(){
-          echo "<b>" . $this->name . "</b><br />";
+          echo '<b>' . $this->name . '</b><br />';
      }     
      
     

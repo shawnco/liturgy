@@ -19,6 +19,9 @@ class MatinsPrayers extends Element {
      
      public function display(){
           $this->showName();
+          if($this->season['day'] == 0){
+               $this->litany();
+          }
           $this->cecho($this->weeklyCollect());
           $this->cecho($this->morningPrayer());
           $this->cecho('O Lord, our heavenly Father, almighty and everlasting God, you have safely brought us to the beginning of this day. Defend us in the same with your mighty power and grant that this day we fall into no sin, neither run into any kind of danger, but that all our doings, being ordered by your governance, may be righteous in your sight; through Jesus Christ, your son, our Lord, who lives and reigns with you and the Holy Spirit, one God, now and forever, amen.');
@@ -128,7 +131,13 @@ Amen.'
      // From the Portals of Prayer booklet
      private function morningPrayer(){
           $prayers = array(
-              
+              'Risen Savior, we come before you with great joy in our hearts, as we exlcaim with the psalmist, "Let us go to the house of the Lord!" We thank you for the privilege of gathering for worship with our brothers and sisters in Christ. We are richly blessed each time we come together to sing praises to your holy name and to receive anew, through your Word and Sacraments, the blessings you earned for us through your victorious death and resurrection. Fill us with your grace and Sprit this day, that we may be beacons of your light, love, and saving grace in our daily life and relationships.',
+              'Gracious God, you have promised to watch over our coming and going each day and forevermore. Grant us your grace and guidance as we carry out our calling and vocation in life this week. Whatever we do, may we do it to your glory, for the good of those around us, and for the growth of your kingdom. Fill us anew with your love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, and self-control. Help us to reflect these fruits of your Spirit in all of our words, attitudes, and actions. And when we are blessed with success, may we give you all glory, honor, and praise.',
+              'Dear Lord, as I rise on this new day, I thank you for preserving me through the night, for guarding me from danger, and for giving me rest. As I make my beginning in you, I ask that all of my interactions with others today would be pleasing to you, that I may generously share your love. Guide me in my work so that I don\'t become overburdened by the challenges of the day, but rahter help me to do my best and trust that you will provide the results. Give me wisdom in times of confusion, creativity in times of new beginnings, and persistence in times of frustration. Go with me as I seek to do your will.',
+              'Dearest Jesus as I begin my day, I thank you for your Word, through which I learn of your love and kindness. Give me grace this day to trust in your promises and cling to them. I pray that your Word would pass from my reading and understanding to my doing and living. Help me to be a faithful worker, to be reliable and trustworthy, to be worthy of my hire, and to embrace the vocations you have given me. Help me to rejoice in these tasks, knowing that even the lowliest job can be a testament to your grace in my life as I fulfill my roles as student, worker, classmate, disciple, friend, and more. Go with me through all of my tasks this day.',
+              'THURSDAY_MORNING',
+              'FRIDAY_MORNING',
+              'SATURDAY_MORNING'
           );
           return $prayers[$this->season['day']];
           
