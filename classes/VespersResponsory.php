@@ -5,8 +5,8 @@
  *
  * @author Shawn Contant <shawnc366@gmail.com>
  */
-class VespersResponsory {
-     private $name = 'Responsory';
+class VespersResponsory extends Element {
+     protected $name = 'Responsory';
      private $responses = array(
           'advent' => array(
                'refrain' => 'This is the name by which He will be called: The Lord is Our Righteousness',
@@ -29,7 +29,6 @@ class VespersResponsory {
      );
      
      public function __construct(){
-          parent::__construct();
           $this->season = $this->getSeason();
      }
      

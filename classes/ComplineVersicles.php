@@ -5,8 +5,8 @@
  *
  * @author Shawn Contant <shawnc366@gmail.com>
  */
-class ComplineVersicles {
-     private $name = 'Versicles';
+class ComplineVersicles extends Element {
+     protected $name = 'Versicles';
      
      // Constructor
      public function __construct(){

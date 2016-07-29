@@ -10,6 +10,7 @@ class Magnificat extends Element {
      protected $name = 'Magnificat';
      
      public function __construct(){
+          include('MagnificatAntiphon.php');
           $this->antiphon = new MagnificatAntiphon();
      }
      

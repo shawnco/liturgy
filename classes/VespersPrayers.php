@@ -5,10 +5,9 @@
  * @author Shawn Contant <shawnc366@gmail.com>
  */
 class VespersPrayers extends Element {
-     private $name = 'Prayers';
+     protected $name = 'Prayers';
      
      public function __construct(){
-          parent::__construct();
           $this->season = $this->getSeason();
      }
      

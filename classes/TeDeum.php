@@ -6,9 +6,10 @@
  * @author Shawn Contant <shawnc366@gmail.com>
  */
 class TeDeum extends Element {
-     private $name = 'Te Deum';
+     protected $name = 'Te Deum';
      
      public function __construct(){
+          include('TeDeumAntiphon.php');
           $this->antiphon = new TeDeumAntiphon();
      }
      

@@ -10,15 +10,15 @@ class Vespers extends Office {
      
      public function __construct(){
           $this->elements = array(
-              new VespersVersicles(),
-              //new VespersPsalms(),
-              //new VespersHymn(),
-              new VespersReadings(),
-              new VespersResponsory(),
-              new Magnificat(),
-              new Kyrie($this->name),
-              new VespersPrayers(),
-              new LordsPrayer($this->name)
+              'VespersVersicles',
+              //'VespersPsalms',
+              //'VespersHymn',
+              'VespersReadings',
+              'VespersResponsory',
+              'Magnificat',
+              'Kyrie',
+              'VespersPrayers',
+              'LordsPrayer'
           );
      }
 }

@@ -6,11 +6,7 @@
  * @author Shawn Contant <shawnc366@gmail.com>
  */
 class ComplineResponsory extends Element {
-     private $name = 'Responsory';
-     
-     public function __construct(){
-          parent::__construct();
-     }
+     protected $name = 'Responsory';
           
      // Compline responsory is so basic there's little need to complicate things.
      public function display(){

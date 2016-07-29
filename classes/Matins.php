@@ -10,16 +10,16 @@ class Matins extends Office {
      
      public function __construct(){
           $this->elements = array(
-              new DayVersicles($this->name),
-              new Venite(),
-              //new MatinsPsalms(),
-              //new MatinsHymn(),
-              new MatinsReadings(),
-              new MatinsResponsory(),
-              new Benedictus(),
-              new Kyrie($this->name),
-              new MatinsPrayers(),
-              new LordsPrayer($this->name)
+              'DayVersicles',
+              'Venite',
+//              'MatinsPsalms',
+//              'MatinsHymn',
+              'MatinsReadings',
+              'MatinsResponsory',
+              'Benedictus',
+              'Kyrie',
+              'MatinsPrayers',
+              'LordsPrayer'
           );
      }
 }

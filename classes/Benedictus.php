@@ -6,10 +6,10 @@
  * @author Shawn Contant <shawnc366@gmail.com>
  */
 class Benedictus extends Element {
-     private $name = 'Benedictus';
+     protected $name = 'Benedictus';
      
      public function __construct(){
-          parent::__construct();
+          include('BenedictusAntiphon.php');
           $this->antiphon = new BenedictusAntiphon();
      }
      

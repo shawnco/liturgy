@@ -6,7 +6,7 @@
  * @author Shawn Contant <shawnc366@gmail.com>
  */
 class MatinsResponsory extends Element {
-     private $name = 'Responsory';
+     protected $name = 'Responsory';
      private $responses = array(
           'easter' => array(
                'refrain' => 'Give to the Lord all glory and strength, give him the honor due his name. Alleluia, alleluia.',
@@ -29,13 +29,12 @@ class MatinsResponsory extends Element {
      );
      
      public function __construct(){
-          parent::__construct();
           $this->season = $this->getSeason();
      }
      
      public function display(){
           $this->showName();
-          if(in_array($this->season['season'], array('lent', 'advent'))){
+          if(!in_array($this->season['season'], array('lent', 'advent'))){
                $this->season['season'] = 'other';
           }
           $this->getAudio('matins', 'responsory');

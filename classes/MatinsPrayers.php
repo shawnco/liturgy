@@ -6,14 +6,13 @@
  * Mon-Sat this is simply the weekly collect from BCP, morning prayer from POP, and collect for grace.
  * Sun SKIP the kyrie and add the litany before the upper three.
  *
- * @author Shawnco
+ * @author Shawn Contant <shawnc366@gmail.com>
  */
 
 class MatinsPrayers extends Element {
-     private $name = 'Prayers';
+     protected $name = 'Prayers';
      
      public function __construct(){
-          parent::__construct();
           $this->season = $this->getSeason();
      }
      

@@ -10,13 +10,13 @@ class None extends Office {
      
      public function __construct(){
           $this->elements = array(
-              new DayVersicles($this->name),
-              //new NonePsalms(),
-              //new NoneHymn(),
-              new NoneReadings(),
-              //new NoneResponsory(),
-              new Kyrie($this->name),
-              new LordsPrayer($this->name)
+              'DayVersicles',
+//              'NonePsalms',
+//              'NoneHymn',
+//              'NoneReadings',
+//              'NoneResponsory',
+              'Kyrie',
+              'LordsPrayer'
           );
      }
 }
