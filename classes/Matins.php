@@ -12,7 +12,7 @@ class Matins extends Office {
           $this->elements = array(
               'DayVersicles',
               'Venite',
-//              'MatinsPsalms',
+              'MatinsPsalms',
 //              'MatinsHymn',
               'MatinsReadings',
               'MatinsResponsory',
