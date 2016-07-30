@@ -11,7 +11,7 @@ class Vespers extends Office {
      public function __construct(){
           $this->elements = array(
               'VespersVersicles',
-              //'VespersPsalms',
+              'VespersPsalms',
               //'VespersHymn',
               'VespersReadings',
               'VespersResponsory',

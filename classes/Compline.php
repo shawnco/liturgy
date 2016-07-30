@@ -12,7 +12,7 @@ class Compline extends Office {
           $this->elements = array(
               'ComplineVersicles',
               'Confession',
-              //'ComplinePsalms',
+              'ComplinePsalms',
               //'ComplineHymn',
               'ComplineReadings',
               'ComplineResponsory',

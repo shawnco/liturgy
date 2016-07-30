@@ -35,12 +35,12 @@ class TeDeum extends Element {
                When you took upon yourself to deliver man<br />
                You humbled yourself to be born of a virgin<br />
                When you had overcome the sharpness of death<br />
-               You opened the kingdom of heaven to all believers<br />
+               You opened the kingdom of heaven to all believers<br /><br />
                You sit at the right hand of God<br />
                In the glory of the Father<br />
                We believe that you will come<br />
-               to be our judge<br /><br />
-               Therefore we pray you to help your servants<br />
+               To be our judge<br /><br />
+               We therefore pray you to help your servants<br />
                Whom you have redeemed with your precious blood<br />
                Make them to be numbered with your saints<br />
                In glory everlasting<br /><br />

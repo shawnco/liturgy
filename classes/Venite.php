@@ -21,7 +21,7 @@ class Venite extends Element {
             'O come let us sing to the Lord<br />
             Let us make a joyful noise to the Rock of our salvation.<br />
             Let us come into His presence with thanksgiving;<br />
-            Let us make a joyful noise unto Him with songs of praise.<br /> <br />    
+            Let us make a joyful noise to Him with songs of praise.<br /> <br />    
             For the Lord is a great God<br />
             And a great King above all gods.<br />
             The deep places of the Earth are in his hand<br />
@@ -36,7 +36,7 @@ class Venite extends Element {
             Glory be to the Father and to the Son<br />
             And to the Holy Spirit<br />
             As it was in the beginning, is now,<br />
-            And ever shall be; world without end. Amen.');
+            And will be forever, amen.');
           $this->lecho('Blessed be God the Father, the Son, and the Holy Spirit.');
           $this->cecho('O come, let us worship him.');          
      }

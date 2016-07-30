@@ -13,7 +13,7 @@ class Sext extends Office {
               'DayVersicles',
               //'SextPsalms',
               //'SextHymn',
-              //'SextReadings',
+              'SextReadings',
               //'SextResponsory',
               'Kyrie',
               'LordsPrayer'

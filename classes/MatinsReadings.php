@@ -34,7 +34,37 @@ class MatinsReadings extends Element {
              
          ),
          'Jul' => array(
-             
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             'Acts 24:1-23',
+             'Acts 24:24-25:12',
+             'Acts 25:13-27'
          ),
          'Aug' => array(
              
@@ -57,7 +87,7 @@ class MatinsReadings extends Element {
      public function display(){
           if($this->season['season'] == 'ordinary'){
                // Probably incorrect
-               $reading = $this->readings[$this->season[date('M')]][$this->season['day']];
+               $reading = $this->readings[date('M')][date('d')];
           }else{
                $reading = $this->readings[$this->season['season']][$this->season['week']][$this->season['day']];
           }

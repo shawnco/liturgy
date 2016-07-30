@@ -13,7 +13,7 @@ class Terce extends Office {
               'DayVersicles',
 //              'TercePsalms',
 //              'TerceHymn',
-//              'TerceReadings',
+              'TerceReadings',
 //              'TerceResponsory',
               'Kyrie',
               'LordsPrayer'

@@ -29,7 +29,7 @@ class Benedictus extends Element {
                To perform the mercy promised to our fathers<br />
                And to remember his holy covenant<br />
                The oath that he swore to our father Abraham<br />
-               To guarantee us that we<br /><br />
+               To grant us that we<br /><br />
                Being delivered from the hand of our enemies<br />
                Might serve him without fear<br />
                In holiness and righteousness before him<br />

@@ -34,10 +34,15 @@ class MatinsResponsory extends Element {
      
      public function display(){
           $this->showName();
-          if(!in_array($this->season['season'], array('lent', 'advent'))){
+          if(!in_array($this->season['season'], array('lent', 'advent', 'easter'))){
                $this->season['season'] = 'other';
           }
-          $this->getAudio('matins', 'responsory');
+          if($this->season['season'] === 'easter'){
+               $this->getAudio('matins', 'responsory-easter');
+          }else{
+               $this->getAudio('matins', 'responsory-common');
+          }
+          
           $this->lecho($this->responses[$this->season['season']]['verse1']);
           $this->cecho($this->responses[$this->season['season']]['refrain']);
           $this->lecho($this->responses[$this->season['season']]['verse2']);

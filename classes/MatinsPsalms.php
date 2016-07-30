@@ -26,7 +26,7 @@ class MatinsPsalms extends Element {
                '34',
                '5',
                '38',
-               '5',
+               '22',
                '43',
           ),
          'easter' => array(
@@ -100,7 +100,7 @@ class MatinsPsalms extends Element {
                $weekly = $this->psalmTable['gen' . ($this->season['week'] % 4)][$this->season['day']];
           }
           
-          echo '<iframe src="https://www.biblegateway.com/passage/?search=psalm ' . $daily . '; psalm ' . $weekly . '&verson=ESV" width="80%" height="300px"></iframe><br />';
+          echo '<iframe src="https://www.biblegateway.com/passage/?search=psalm ' . $daily . '; psalm ' . $weekly . '&version=ESV" width="80%" height="300px"></iframe><br />';
      }
 }
 

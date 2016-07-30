@@ -34,7 +34,7 @@ class VespersResponsory extends Element {
      
      public function display(){
           $this->showName();
-          if(in_array($this->season['season'], array('lent', 'advent'))){
+          if(!in_array($this->season['season'], array('lent', 'advent'))){
                $this->season['season'] = 'other';
           }
           $this->getAudio('vespers', 'responsory');

@@ -14,6 +14,9 @@ class Kyrie extends Element{
      
      public function display(){
           $this->showName();
+          if(in_array($this->office, array('Terce', 'Sext', 'None'))){
+               $this->office = 'little-hours';
+          }
           $this->getAudio($this->office, 'kyrie');
           $this->cecho('Lord, have mercy. Christ, have mercy. Lord, have mercy.');
      }

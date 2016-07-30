@@ -16,7 +16,7 @@ class Matins extends Office {
 //              'MatinsHymn',
               'MatinsReadings',
               'MatinsResponsory',
-              'Benedictus',
+              'MatinsCanticle',
               'Kyrie',
               'MatinsPrayers',
               'LordsPrayer'

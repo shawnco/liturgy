@@ -34,7 +34,37 @@ class VespersReadings extends Element {
              
          ),
          'Jul' => array(
-             
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '',
+             '1 Sam 14:47—15:9',
+             '1 Sam 15:10–35',
+             '1 Sam 16:1–23'             
          ),
          'Aug' => array(
              
@@ -57,7 +87,7 @@ class VespersReadings extends Element {
      public function display(){
           if($this->season['season'] == 'ordinary'){
                // Probably incorrect
-               $reading = $this->readings[$this->season[date('M')]][$this->season['day']];
+               $reading = $this->readings[date('M')][date('d')];
           }else{
                $reading = $this->readings[$this->season['season']][$this->season['week']][$this->season['day']];
           }
