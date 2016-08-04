@@ -8,7 +8,9 @@
 class MagnificatAntiphon extends Element {
      
      private $antiphons = array(
-         
+         'advent' => array(
+             'Behold the name of the Lord comes from afar, and the whole earth is full of his glory.'
+         )
      );
      
      public function __construct(){

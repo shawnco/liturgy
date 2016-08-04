@@ -39,7 +39,7 @@ class VespersPrayers extends Element {
                   'o1',
               ),
               'advent' => array(
-                  
+                  'O Lord, stir up your power and come, that by your protection we may deserve to be rescued from the threatending dangers of our sins, and to be saved by your deliverance.'
               )
           );
           return $collects[$this->season['season']][$this->season['week']];

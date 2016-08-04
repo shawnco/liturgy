@@ -88,7 +88,8 @@ class VespersPsalms extends Element {
           if(in_array($this->season['season'], array('lent', 'easter', 'advent'))){
                $weekly = $this->psalmTable[$this->season['season']][$this->season['day']];
           }else{
-               $weekly = $this->psalmTable['gen' . ($this->season['week'] % 4)][$this->season['day']];
+			  echo $this->season['week'];
+               $weekly = $this->psalmTable['gen' . (($this->season['week'] % 4) + 1)][$this->season['day']];
           }
           $psalms = explode(';', $weekly);
           

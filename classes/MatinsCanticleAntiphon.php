@@ -7,7 +7,11 @@
  */
 class MatinsCanticleAntiphon extends Element {
      
-     private $antiphons = array();
+     private $antiphons = array(
+         'advent' => array(
+             'The Holy Spirit will come upon you, O Mary; do not fear, you will bear in your womb the Son of God, alleluia.'
+         )
+     );
      
      public function __contruct(){
           $this->season = $this->getSeason();
