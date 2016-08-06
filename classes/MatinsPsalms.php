@@ -97,7 +97,7 @@ class MatinsPsalms extends Element {
           if(in_array($this->season['season'], array('lent', 'easter', 'advent'))){
                $weekly = $this->psalmTable[$this->season['season']][$this->season['day']];
           }else{
-               $weekly = $this->psalmTable['gen' . ($this->season['week'] % 4)][$this->season['day']];
+               $weekly = $this->psalmTable['gen' . (1 + ($this->season['week'] % 4))][$this->season['day']];
           }
           
           echo '<iframe src="https://www.biblegateway.com/passage/?search=psalm ' . $daily . '; psalm ' . $weekly . '&version=ESV" width="80%" height="300px"></iframe><br />';
