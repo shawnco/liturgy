@@ -14,7 +14,7 @@ if(isset($_GET['office']) && $_GET['office'] !== '' && in_array($_GET['office'],
      $title = 'Liturgy';
      include('template/template-top.php');
 ?>     
-
+<p><i>A prayer before office:</i> Open my lips, O Lord, that I may praise your Holy Name; cleanse my heart from all vain, evil, and wandering thoughts; enlighten my understanding and kindle my affection, that praying attentively and devoutly I may be heard in the presence of your divine Majesty, through Jesus Christ, our Lord. Amen.</p>
 <p>Select an office from the full liturgy below to begin:</p>
 <table>
   <tr>
