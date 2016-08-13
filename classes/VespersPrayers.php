@@ -81,19 +81,18 @@ class VespersPrayers extends Element {
                   'O Lord, stir up your power and come, that by your protection we may deserve to be rescued from the threatending dangers of our sins, and to be saved by your deliverance.'
               )
           );
-          var_dump($this->season['week']);
           return $collects[$this->season['season']][$this->season['week'] - 1];
      }
      
      private function eveningPrayer(){
           $prayers = array(
-              'SUNDAY',
-              'MONDAY',
-              'TUESDAY',
-              'WEDNESDAY',
-              'THURSDAY',
-              'FRIDAY',
-              'SATURDAY'
+              'Blessed Redeemer, as this Sunday draws to a close, we again lift up our eyes to "You who are enthroned in the heavents!". We have been blessed to gather with fellow believers to offer you prayers and praise and to receive your rich blessings for our faith and life through your Word and blessed Sacraments. As we prepare to fulfill our roles in life this week in our jobs, schools, and wherever you lead us, enable us by your grace and Spirit to reflect your kindness and serve your purposes in whatever we say and do. Forgive us when we fall short of your perfect will.',
+              'Loving Lord, we look back over our day with gratitude for all of your kindness and care for us. But we also remember the ways we have offended you and hurt those around us. How grateful we are that you are "merciful and gracious, slow to anger and abounding in steadfast love." Cleanse us of all our wrongs and failures, sweep away the clouds of guilt that trouble us, and refresh us with your forgiving love and healing power. Empower us by your Spirit to love and forigve others who have hurt or offended us with the same measure that you love us and forfive us - completely and unconditionally.',
+              'O Holy Father, who rested on the seventh day of creation, be near me as I rest and relax. As the sun sets and day is nearly done, I pray for your blessings on my homecoming. Help me to lay aside my tasks for the day and to rest in your protecting presence. Be with friends and family near and far from me and give them peace this night. Bless the interactions I have, and be the tie that binds us together. I pray that as I rest, you would help me to be still and know that you are God.',
+              'In the evening hours of the day, dear Lord, I ask for your mercy. Grant me peace and rest as I turn from my work and turn to you in prayer. Give me restful sleep, that my body may be rejuvenated for another day of service to you. I don\'t know what the future holds, dear Lord, but I trust that with you by my side, you will help me in all circumstances. I lay my burdens into your strong and loving arms and ask for your blessing. You are my Good Shepherd and I pray that I would rest safely in your arms as your dear lamb.',
+              'Dear Jesus, I thank you for your goodness showered on me today: friends, home, food, clothing, good health, forgiveness, salvation, and countless other blessings. I deserve nothing that you give me, but I receive them all with humble thanksgiving. May I not waste the days you give me. Give me grace to serve you willingly and faithfully all the days of my life. Use me as you wish to accomplish your will. May I also be your instrument in ministering to others. Please grant me a peaceful night\'s rest, that I may be refreshed for the work of tomorrow.',
+              'Dear Father, another day is almost ended and night approaches. Please forgive me all the sins I have committed this day, both those of which I am aware, and those of which I am unaware. I know that Jesus paid the price of death and damnation on the cross for my sins, so please have mercy on me for his sake. Only by your grace can I sleep in peace. Thank you for sustaining my faith, that I continue to trust you and live for you. Thank you for the life you have given me as your child and the joy of knowing you. I enjoy walking with you each day and thank you for your unfailing love for me, shown most perfectly in your Son.',
+              'Gracious Father, as this day comes to a close, I reflect on my actions this past week. Far too often I fell short of your glory. Forgive me for Jesus\'s sake. Thank you for loving me though I am sinful. Thank you for your constant presence and guidance. Without you, I am lost. With you, life is a joy. Thank you for giving my life purpose and meaning. Instill in me a love for worshipping you. May I look forward to tomorrow morning when I will have the privilege of worshipping you with my brothers and sisters in Christ. As I receive your mercy tomorrow through Word and Sacrament, may I be euipped to live all the more faithfully for you.',
           );
           return $prayers[$this->season['day']];
      }

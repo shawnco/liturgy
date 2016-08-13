@@ -10,6 +10,7 @@ $routes = array();
 
 $routes['Compline'] = 'Compline';
 $routes['Evening'] = 'Evening';
+$routes['Good_Friday'] = 'GoodFriday';
 $routes['Matins'] = 'Matins';
 $routes['Morning'] = 'Morning';
 $routes['Night'] = 'Night';
