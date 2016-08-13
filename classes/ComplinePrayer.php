@@ -20,7 +20,7 @@ class ComplinePrayer extends Element {
           $this->cecho('Hide me in the shadow of your wings');
           $this->lecho('In righteousness I shall see you');
           $this->cecho('When I awake, your presence will give me joy');
-          
+          $this->cecho('O God, help me have a heart for people. Inspire me to be interested in the lives and welfare of those around me. Open my eyes to their complexity and uniqueness, and push me to want to explore it.');          
           $prayers = array(
               'Abide with us, Lord, for it is toward evening, and the day is far spent. Abide with us and with your whole Church. Abide with us with your grace and goodness, with your holy Word and Sacrament, with your strength and blessing. Abide with us when the night of affliction and temptation comes upon us, the night of fear and despair, the night when death draws near. Abide with us and with all the faithful, now and forever.',
               'Visit our dwellings, O Lord, and drive from them all the snares of the enemy; let your holy angels dwell with us to preserve us in peace; and let your blessing be on us always; through Jesus Christ, our Lord.',

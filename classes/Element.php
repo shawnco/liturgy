@@ -24,7 +24,7 @@ abstract class Element {
      
      // Congregation says
      function cecho($msg){
-          echo '<b>C:</b> ' . $msg . '<br />';
+          echo '<div class="congregation"><b>C:</b> ' . $msg . '</div>';
      }
      
      // Grabs the audio and generates the HTML

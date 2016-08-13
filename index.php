@@ -1,29 +1,43 @@
 <?php
-
+include('config/routes.php');
 // See if an office has been specified and if so, make that office.
-
-if(isset($_GET['office'])){
-     $o = $_GET['office'];
+if(isset($_GET['office']) && $_GET['office'] !== '' && in_array($_GET['office'], $routes)){
+     $o = $routes[$_GET['office']];
+     $title = $o;
+     include('template/template-top.php');
      include('classes/Office.php');
      include('classes/Element.php');
      include('classes/' . $o . '.php');
      $of = new $o();
      $of->display();
 }else{
+     $title = 'Liturgy';
+     include('template/template-top.php');
 ?>     
+
+<p>Select an office from the full liturgy below to begin:</p>
 <table>
   <tr>
-    <td><a href='index.php/Matins'>Matins</a><br />Morning</td>
-    <td><a href='index.php/Terce'>Terce</a><br />Mid-Morning</td>
-    <td><a href='index.php/Sext'>Sext</a><br />Noon</td>
+    <td><a href='Matins'>Matins</a><br />Morning</td>
+    <td><a href='Terce'>Terce</a><br />Mid-Morning</td>
+    <td><a href='Sext'>Sext</a><br />Noon</td>
   </tr>
   <tr>
-    <td><a href='index.php/None'>None</a><br />Mid-Afternoon</td>
-    <td><a href='index.php/Vespers'>Vespers</a><br />Evening</td>
-    <td><a href='index.php/Compline'>Compline</a><br />Night</td>
+    <td><a href='None'>None</a><br />Mid-Afternoon</td>
+    <td><a href='Vespers'>Vespers</a><br />Evening</td>
+    <td><a href='Compline'>Compline</a><br />Night</td>
   </tr>
 </table>
-     
+
+<p>Or, if you're using the shortened three office system, pick from below:</p>
+<table>
+     <tr>
+          <td><a href='Morning'>Morning Prayer</a></td>
+          <td><a href='Evening'>Evening Prayer</a></td>
+          <td><a href='Night'>Night Prayer</a></td>
+     </tr>
+</table>
 <?php     
 }
+include('template/template-bottom.php');
 ?>

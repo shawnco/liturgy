@@ -62,6 +62,10 @@ h1{
   color:white;
 }
 
+.element {
+     margin-left: 20px;
+}
+
 /* This is specific to the index page. */
 table{
   margin-left: auto;

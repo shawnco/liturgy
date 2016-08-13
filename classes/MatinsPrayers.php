@@ -27,7 +27,77 @@ class MatinsPrayers extends Element {
      }
      
      // Only used on Sundays
-     private function litany(){}
+     private function litany(){
+          $this->lecho('O Lord');
+          $this->cecho('Have mercy');
+          $this->lecho('O Christ');
+          $this->cecho('Have mercy');
+          $this->lecho('O Lord');
+          $this->cecho('Have mercy');
+          $this->lecho('O Christ');
+          $this->cecho('Hear us');
+          
+          $this->lecho('God the Father in heaven');
+          $this->cecho('Have mercy');
+          $this->lecho('God the Son, Redeemer of the world');
+          $this->cecho('Have mercy');
+          $this->lecho('God the Holy Spirit');
+          $this->cecho('Have mercy');
+          
+          $this->lecho('Be gracious to us');
+          $this->cecho('Spare us, good Lord');
+          $this->lecho('Be gracious to us');
+          $this->cecho('Help us, good Lord');          
+          
+          $this->lecho('From all sin, from all error, from all evil; <br />
+               From the crafts and assaults of the devil; from sudden and evil death; <br />
+               From pestilence and famine; from war and bloodshed; from sedition and from rebellion; <br />
+               From lightning and tempest; from all calamity by fire and water; and from everlasting death: ');
+          $this->cecho('Good Lord, deliver us');
+          $this->lecho('By the mystery of Your holy incarnation; by Your holy nativity; <br />
+               By Your baptism, fasting, and temptation; by Your agony and bloody sweat; by Your cross and passion; by Your precious death and burial; <br />
+               By Your glorious resurrection and ascension; and by the coming of the Holy Spirit, the Comforter: ');
+          $this->cecho('Help us, good Lord');
+          $this->lecho('In all time of our tribulation; in all time of our prosperity; in the hour of death; and in the day of judgment: ');
+          $this->cecho('Help us, good Lord');
+          $this->lecho('We poor sinners implore you');
+          $this->cecho('To hear us, O Lord');
+          
+          $this->lecho('To rule and govern Your holy Christian Church; to preserve all pastors and ministers of Your Church in the true knowledge and understanding of Your wholesome Word and to sustain them in holy living; <br />
+               To put an end to all schisms and causes of offense; to bring into the way of truth all who have erred and are deceived; <br />
+               To beat down Satan under our feet; to send faithful laborers into Your harvest; and to accompany Your Word with Your grace and Spirit');
+          $this->cecho('We implore you to hear us, good Lord');
+          $this->lecho('To raise those who fall and to strengthen those who stand; and to comfort and help the weakhearted and the distressed: ');
+          $this->cecho('We implore you to hear us, good Lord');
+          
+          $this->lecho('To give to all peoples concord and peace; to preserve our land from discord and strife; to give our country Your protection in every time of need; <br />
+               To direct and defend our president and all in authority; to bless and protect our magistrates and all our people; <br />
+               To watch over and help all who are in danger, necessity, and tribulation; to protect and guide all who travel; <br />
+               To grant all women with child, and all mothers with infant children, increasing happiness in their blessings; to defend all orphans and widows and provide for them; <br />
+               To strengthen and keep all sick persons and young children; to free those in bondage; and to have mercy on us all: ');
+          $this->cecho('We implore you to hear us, good Lord');
+          $this->lecho('To forgive our enemies, persecutors, and slanderers and to turn their hearts; to give and preserve for our use the kindly fruits of the earth; and graciously to hear our prayers: ');
+          $this->cecho('We implore you to hear us, good Lord');
+          
+          $this->lecho('Lord Jesus Christ, Son of God:');
+          $this->cecho('We implore you to hear us');
+          
+          $this->lecho('Christ, the Lamb of God, who takes away the sin of the world, ');
+          $this->cecho('Have mercy');
+          $this->lecho('Christ, the Lamb of God, who takes away the sin of the world, ');
+          $this->cecho('Have mercy');
+          $this->lecho('Christ, the Lamb of God, who takes away the sin of the world, ');
+          $this->cecho('Grant us your peace');
+          
+          $this->lecho('O Christ');
+          $this->cecho('Hear us');
+          $this->lecho('O Lord');
+          $this->cecho('Have mercy');
+          $this->lecho('O Christ');
+          $this->cecho('Have mercy');
+          $this->lecho('O Lord');
+          $this->cecho('Have mercy, amen.');
+     }
      
      // From the Book of Common Prayer
      private function weeklyCollect(){
@@ -118,7 +188,13 @@ grace to receive thankfully the fruits of this redeeming work,
 and to follow daily in the blessed steps of his most holy life;
 through Jesus Christ your Son our Lord, who lives and reigns
 with you and the Holy Spirit, one God, now and for ever.
-Amen.'
+Amen.',
+                  'Grant, O merciful God, that your Church, being gathered
+together in unity by your Holy Spirit, may show forth your power among all peoples, to the glory of your Name; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen. ',
+                  'Lord of all power and might, the author and giver of all good things: Graft in our hearts the love of your Name; increase in us true religion; nourish us with all goodness; and bring forth in us the fruit of good works; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen.',
+                  'Grant us, O Lord, to trust in you with all our hearts; for, as you always resist the proud who confide in their own strength, so you never forsake those who make their boast of your mercy; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen.',
+                  'O God, because without you we are not able to please you, mercifully grant that your Holy Spirit may in all things direct and rule our hearts; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, now and for ever. Amen.',
+                  'Grant us, Lord, not to be anxious about earthly things, but to love things heavenly; and even now, while we are placed among things that are passing away, to hold fast to those that shall endure; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen.'
               ),
               'advent' => array(
                   
