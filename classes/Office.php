@@ -7,12 +7,13 @@
  */
 class Office{
      protected $name;
+     protected $type;
      protected $elements;
      
      public function display(){
           foreach($this->elements as $e){
                include('classes/' . $e . '.php');
-               $el = new $e($this->name);
+               $el = new $e($this->type);
                $el->display();
           }
      }

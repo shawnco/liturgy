@@ -14,25 +14,21 @@ class DayVersicles extends Element {
      );
      
      // Constructor
-     public function __construct($office){
-          if(in_array($office, array('Terce', 'Sext', 'None'))){
-               $this->office = 'little-hours';
-          }else{
-               $this->office = 'matins';
-          }
+     public function __construct($type){
           $this->season = $this->getSeason();
+          $this->type = $type;
      }
      
      // Show the veriscles
      public function display(){
           $this->showName();
-          $this->getAudio($this->office, 'versicles');
+          $this->getAudio($this->type, 'versicles');
           
           $this->lecho('O Lord, open my lips.');
 	$this->cecho('And my mouth will declare your praise.');
           
           // For Matins I actually want to repeat that first line three times.
-          if($this->office == 'matins'){
+          if($this->type == 'matins'){
                $this->lecho('O Lord, open my lips.');
                $this->cecho('And my mouth will declare your praise.');
                $this->lecho('O Lord, open my lips.');

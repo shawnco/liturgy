@@ -7,6 +7,7 @@
  */
 class Compline extends Office {
      protected $name = 'Compline';
+     protected $type = 'compline';
      
      public function __construct(){
           $this->elements = array(

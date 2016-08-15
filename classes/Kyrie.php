@@ -8,16 +8,13 @@
 class Kyrie extends Element{
      protected $name = 'Kyrie';
      
-     public function __construct($office){
-          $this->office = $office;
+     public function __construct($type){
+          $this->type = type;
      }
      
      public function display(){
           $this->showName();
-          if(in_array($this->office, array('Terce', 'Sext', 'None'))){
-               $this->office = 'little-hours';
-          }
-          $this->getAudio($this->office, 'kyrie');
+          $this->getAudio($this->type, 'kyrie');
           $this->cecho('Lord, have mercy. Christ, have mercy. Lord, have mercy.');
      }
 }

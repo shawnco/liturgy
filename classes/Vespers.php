@@ -7,6 +7,7 @@
  */
 class Vespers extends Office {
      protected $name = 'Vespers';
+     protected $type = 'vespers';
      
      public function __construct(){
           $this->elements = array(

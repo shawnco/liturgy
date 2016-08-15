@@ -7,6 +7,7 @@
  */
 class Matins extends Office {
      protected $name = 'Matins';
+     protected $type = 'matins';
      
      public function __construct(){
           $this->elements = array(

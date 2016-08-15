@@ -16,13 +16,14 @@ class VespersVersicles extends Element {
      // Constructor
      public function __construct(){
           $this->office = 'Vespers';
+          $this->type = 'vespers';
           $this->season = $this->getSeason();
      }
      
      // Show the veriscles
      public function display(){
           $this->showName();
-          $this->getAudio($this->office, 'versicles');
+          $this->getAudio($this->type, 'versicles');
           
           $this->lecho('O Lord, open my lips.');
 	$this->cecho('And my mouth will declare your praise.');

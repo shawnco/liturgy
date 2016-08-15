@@ -7,6 +7,7 @@
  */
 class None extends Office {
      protected $name = 'None';
+     protected $type = 'little-hours';
      
      public function __construct(){
           $this->elements = array(

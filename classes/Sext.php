@@ -7,6 +7,7 @@
  */
 class Sext extends Office {
      protected $name = 'Sext';
+     protected $type = 'little-hours';
      
      public function __construct(){
           $this->elements = array(

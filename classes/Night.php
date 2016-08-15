@@ -7,6 +7,7 @@
  */
 class Night extends Office{
      protected $name = 'Night Prayer';
+     protected $type = 'compline';
      
      public function __construct(){
           $this->elements = array(

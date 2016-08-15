@@ -7,6 +7,7 @@
  */
 class Terce extends Office {
      protected $name = 'Terce';
+     protected $type = 'little-hours';
      
      public function __construct(){
           $this->elements = array(

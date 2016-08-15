@@ -6,6 +6,7 @@
  */
 class Morning extends Office {
      protected $name = 'Morning Prayer';
+     protected $type = 'matins';
      
      public function __construct(){
           $this->elements = array(

@@ -10,13 +10,13 @@ class ComplineVersicles extends Element {
      
      // Constructor
      public function __construct(){
-          $this->office = 'Compline';
+          $this->type = 'Compline';
      }
      
      // Show the veriscles
      public function display(){
           $this->showName();
-          $this->getAudio($this->office, 'versicles');
+          $this->getAudio($this->type, 'versicles');
           
           $this->lecho('The Lord Almighty grant us a quiet night and peace at the last.');
           $this->cecho('Amen.');
