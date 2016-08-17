@@ -37,7 +37,7 @@ abstract class Element {
      
      // Displays element name
      function showName(){
-          echo '<b>' . $this->name . '</b><br />';
+          echo '<div class="name"><b>' . $this->name . '</b></div>';
      }     
      
     

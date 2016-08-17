@@ -13,7 +13,6 @@ class Venite extends Element {
      }
      
      public function display(){
-          echo '<div class="element">';
           $this->showName();
           $this->getAudio('matins', 'venite');
           $this->lecho('Blessed be God the Father, the Son, and the Holy Spirit.');
@@ -40,7 +39,6 @@ class Venite extends Element {
             And will be forever, amen.');
           $this->lecho('Blessed be God the Father, the Son, and the Holy Spirit.');
           $this->cecho('O come, let us worship him.');
-          echo '</div>';
      }
 }
 

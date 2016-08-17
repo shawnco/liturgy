@@ -10,22 +10,27 @@ class TerceReadings extends Element {
      
      private $readings = array(
          'advent' => array(
-             'Rom. 13:11',
-             'Rom 15:4',
-             'Phil. 4:4-5',
-             '1 Co. 4:12'
+             array(
+               'Rom. 13:11',
+               'Rom 15:4',
+               'Phil. 4:4-5',
+               '1 Co. 4:12'
+             ),
+             'Jer. 23:5'
          ),
          'christmas' => array(
              
          ),
          'epiphany' => array(
-             
+             array(),
+             'Isa. 60:1'
          ),
          'lent' => array(
              
          ),
          'easter' => array(
-             
+             array(),
+             'Rom. 6:9-10'
          ),
          'ordinary' => array(
              '1 John 4:16',

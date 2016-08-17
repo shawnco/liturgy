@@ -13,6 +13,7 @@ class ComplinePrayer extends Element {
      }
      
      public function display(){
+          $this->showName();
           $this->getAudio('compline','prayer');
           $this->lecho('Hear my prayer, O Lord');
           $this->cecho('Listen to my cry');

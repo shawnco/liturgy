@@ -62,10 +62,33 @@ h1{
   color:white;
 }
 
-.element {
-     margin-left: 20px;
+.name {
+     text-align: center;
 }
 
+.office {
+     margin-left: auto;
+     margin-right: auto;
+     width: 75%;
+}
+
+.element {
+     padding-top: 10px;
+     padding-bottom: 10px;
+}
+
+audio {
+     margin-left: 37%;
+}
+
+iframe {
+     height: 300px;
+     width: 100%;
+}
+
+.congregation {
+     margin-left: 15px;
+}
 /* This is specific to the index page. */
 table{
   margin-left: auto;

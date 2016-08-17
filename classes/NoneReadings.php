@@ -10,6 +10,13 @@ class NoneReadings extends Element {
      
      private $readings = array(
          'advent' => array(
+             array(
+                 'Rom. 13:13-14',
+                 'Rom. 15:13',
+                 'Phil. 4:7',
+                 '1 Cor. 4:5'
+             ),
+             'Isa. 14:1'
          ),
          'christmas' => array(
              

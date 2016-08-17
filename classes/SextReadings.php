@@ -10,6 +10,13 @@ class SextReadings extends Element {
      
      private $readings = array(
          'advent' => array(
+             array(
+                 'Rom. 3:12',
+                 'Rom 15:5-6',
+                 'Phil. 4:6',
+                 '1 Cor. 4:3'
+             ),
+             'Jer. 23:6'
          ),
          'christmas' => array(
              
