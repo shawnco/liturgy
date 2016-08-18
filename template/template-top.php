@@ -9,17 +9,17 @@
 <div id="header"><h1><?php echo $title; ?></h1></div>
 <div id="menu">
      <ul>
-          <li><a href="index.php/Matins">Matins</a></li>
-          <li><a href="index.php/Terce">Terce</a></li>
-          <li><a href="index.php/Sext">Sext</a></li>
-          <li><a href="index.php/None">None</a></li>
-          <li><a href="index.php/Vespers">Vespers</a></li>
-          <li><a href="index.php/Compline">Compline</a></li>
+          <li><a href="Matins">Matins</a></li>
+          <li><a href="Terce">Terce</a></li>
+          <li><a href="Sext">Sext</a></li>
+          <li><a href="None">None</a></li>
+          <li><a href="Vespers">Vespers</a></li>
+          <li><a href="Compline">Compline</a></li>
      </ul>
      <ul>
-          <li><a href='index.php/Morning'>Morning</a></li>
-          <li><a href='index.php/Evening'>Evening</a></li>
-          <li><a href='index.php/Night'>Night</a></li>
+          <li><a href='Morning'>Morning</a></li>
+          <li><a href='Evening'>Evening</a></li>
+          <li><a href='Night'>Night</a></li>
      </ul>
           
 

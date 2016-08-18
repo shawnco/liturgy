@@ -19,7 +19,7 @@ abstract class Element {
      
      // Lecturn says
      function lecho($msg){
-          echo '<b>L:</b> ' . $msg . '<br />';
+          echo '<div class="lector"><b>L:</b> ' . $msg . '<br /></div>';
      }
      
      // Congregation says
