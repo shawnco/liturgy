@@ -1,9 +1,8 @@
 <div id="footer">
   <?php $domain = "http://" . $_SERVER["HTTP_HOST"]; ?>
-  <a href="<?php echo $domain; ?>/liturgy">Home</a>
-  <a href="<?php echo $domain; ?>/liturgy/psalter">About the Psalter</a>
-  <a href="<?php echo $domain; ?>/liturgy/times">Times of Prayer</a>
-  <a href="<?php echo $domain; ?>/liturgy/sources">Sources</a>
+  <a href="Index">Home</a>
+  <a href="Psalter">About the Psalter</a>
+  <a href="Sources">Sources</a>
 </div>
 </div>
 </body>

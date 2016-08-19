@@ -15,7 +15,9 @@ $routes['Matins'] = 'Matins';
 $routes['Morning'] = 'Morning';
 $routes['Night'] = 'Night';
 $routes['None'] = 'None';
+$routes['Psalter'] = 'Psalter';
 $routes['Sext'] = 'Sext';
+$routes['Sources'] = 'Sources';
 $routes['Terce'] = 'Terce';
 $routes['Vespers'] = 'Vespers';
 ?>
