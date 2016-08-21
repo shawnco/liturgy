@@ -9,7 +9,7 @@ class Kyrie extends Element{
      protected $name = 'Kyrie';
      
      public function __construct($type){
-          $this->type = type;
+          $this->type = $type;
      }
      
      public function display(){

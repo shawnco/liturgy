@@ -16,11 +16,6 @@
           <li><a href="Vespers">Vespers</a></li>
           <li><a href="Compline">Compline</a></li>
      </ul>
-     <ul>
-          <li><a href='Morning'>Morning</a></li>
-          <li><a href='Evening'>Evening</a></li>
-          <li><a href='Night'>Night</a></li>
-     </ul>
           
 
 </div>

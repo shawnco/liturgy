@@ -15,7 +15,7 @@ class Sext extends Office {
               //'SextPsalms',
               //'SextHymn',
               'SextReadings',
-              //'SextResponsory',
+              'SextResponsory',
               'Kyrie',
               'LordsPrayer'
           );

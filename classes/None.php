@@ -15,7 +15,7 @@ class None extends Office {
 //              'NonePsalms',
 //              'NoneHymn',
               'NoneReadings',
-//              'NoneResponsory',
+              'NoneResponsory',
               'Kyrie',
               'LordsPrayer'
           );
