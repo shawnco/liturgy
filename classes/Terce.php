@@ -12,7 +12,7 @@ class Terce extends Office {
      public function __construct(){
           $this->elements = array(
               'DayVersicles',
-//              'TercePsalms',
+              'TercePsalms',
 //              'TerceHymn',
               'TerceReadings',
               'TerceResponsory',

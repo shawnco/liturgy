@@ -12,7 +12,7 @@ class Sext extends Office {
      public function __construct(){
           $this->elements = array(
               'DayVersicles',
-              //'SextPsalms',
+              'SextPsalms',
               //'SextHymn',
               'SextReadings',
               'SextResponsory',

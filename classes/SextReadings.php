@@ -19,15 +19,38 @@ class SextReadings extends Element {
              'Jer. 23:6'
          ),
          'christmas' => array(
+             array(
+                 'Gal. 4:4-5',
+                 'Phil. 2:10'
+             ),
+             'Heb. 1:10'
              
          ),
          'epiphany' => array(
+             array(
+                 '1 Cor. 9:25',
+                 '2 Cor. 11:25',
+                 '1 Cor. 13:8-9'
+             ),
+             'Isa. 60:4'
              
          ),
          'lent' => array(
-             
+             array(
+                 '2 Cor. 6:2-3',
+                 '1 Thess. 4:3-4',
+                 'Eph. 5:5',
+                 'Gal. 4:27',
+                 'Heb. 9:13-14',
+                 'Phil. 2:8-9'
+             ),
+             'Isa. 55:7'
          ),
          'easter' => array(
+             array(
+                 'Psalm 118:24'
+             ),
+             '1 Cor. 15:20-22'
              
          ),
          'ordinary' => array(

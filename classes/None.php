@@ -12,7 +12,7 @@ class None extends Office {
      public function __construct(){
           $this->elements = array(
               'DayVersicles',
-//              'NonePsalms',
+              'NonePsalms',
 //              'NoneHymn',
               'NoneReadings',
               'NoneResponsory',
