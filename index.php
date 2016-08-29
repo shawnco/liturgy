@@ -28,15 +28,6 @@ if(isset($_GET['office']) && $_GET['office'] !== '' && in_array($_GET['office'],
     <td><a href='Compline'>Compline</a><br />Night</td>
   </tr>
 </table>
-
-<p>Or, if you're using the shortened three office system, pick from below:</p>
-<table>
-     <tr>
-          <td><a href='Morning'>Morning Prayer</a></td>
-          <td><a href='Evening'>Evening Prayer</a></td>
-          <td><a href='Night'>Night Prayer</a></td>
-     </tr>
-</table>
 <?php     
 }
 include('template/template-bottom.php');

@@ -47,7 +47,7 @@ abstract class Element {
           $output = array(
                'season' => '',
                'week' => '',
-               'day' => date('w')
+               'day' => (int)date('w')
           );
 
           // Identify the seasonal ranges

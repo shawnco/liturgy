@@ -39,7 +39,25 @@ class TercePsalms extends Element {
      public function display(){
           $this->showName();
           // For now just manually enter the psalm...
-          echo '<iframe src="https://www.biblegateway.com/passage/?search=psalm 119:' . $this->octaves[0] . '&version=ESV" width="80%" height="300px"></iframe><br />';
+          
+          /**
+           * The algorithm for this is, for every week since August 21, add 5 to the count. Then count the amount of non-Tuesday, non-Thursday days that have passed in this current week.
+           */
+          $days = array(
+              0 => 0,
+              1 => 1,
+              2 => 2,
+              3 => 2,
+              4 => 3,
+              5 => 3,
+              6 => 4
+          );
+          
+          $base = strtotime('August 21, 2016') / 86400;
+          $pastSunday = strtotime('last Sunday') / 86400;
+          $sum = math.floor(($pastSunday - $base) / 7) + $days[$this->season['day']];          
+          $sum += 17;
+          echo '<iframe src="https://www.biblegateway.com/passage/?search=psalm 119:' . $this->octaves[$sum % 21] . '&version=ESV" width="80%" height="300px"></iframe><br />';
      }
 }
 

@@ -8,14 +8,14 @@
 class SextPsalms extends Element {
      protected $name = 'Psalmody';
      private $psalms = array(
-         '120',
-         '122',
-         '124',
-         '126',
-         '128',
-         '130',
-         '132:1-8',
-         '133'
+         array(120, 121),
+         array(122, 123),
+         array(124, 125),
+         array(126, 127),
+         array(128, 129),
+         array(130, 131),
+         array('132:1-9', '132:10-18'),
+         array(133, 134)
      );
      
      public function __construct(){
@@ -24,8 +24,12 @@ class SextPsalms extends Element {
      
      public function display(){
           $this->showName();
-          // For now just manually enter the psalm...
-          echo '<iframe src="https://www.biblegateway.com/passage/?search=psalm ' . $this->psalms[0] . '&version=ESV" width="80%" height="300px"></iframe><br />';
+          $index = math.floor(time()/85400) % 7;
+          if($this->season['day'] === 2 || $this->season['day'] === 4){
+          echo '<iframe src="https://www.biblegateway.com/passage/?search=psalm ' . $this->psalms[$index][0] . '-' . $this->psalms[$index][1] . '&version=ESV" width="80%" height="300px"></iframe><br />';              
+          }else{
+              echo '<iframe src="https://www.biblegateway.com/passage/?search=psalm ' . $this->psalms[$index][0] . '&version=ESV" width="80%" height="300px"></iframe><br />';           
+          }
      }
 }
 

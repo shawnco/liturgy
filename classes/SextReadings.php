@@ -66,7 +66,7 @@ class SextReadings extends Element {
      public function display(){
           $this->showName();
           if($this->season['season'] === 'ordinary'){
-               if(date('d') === 0){
+               if($this->season['day'] === 0){
                     $reading = $this->readings['ordinary'][0];
                }else{
                     $reading = $this->readings['ordinary'][1];

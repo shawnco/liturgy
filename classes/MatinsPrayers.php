@@ -22,6 +22,9 @@ class MatinsPrayers extends Element {
                $this->litany();
           }
           $this->cecho($this->weeklyCollect());
+          if($this->season['day'] !== 0){
+              $this->cecho('Creator of all knowledge, bless my academic efforts. Give me focus and endurance to learn and understand course material, patience with homework, and humility to ask others for help.');
+          }
           $this->cecho($this->morningPrayer());
           $this->cecho('O Lord, our heavenly Father, almighty and everlasting God, you have safely brought us to the beginning of this day. Defend us in the same with your mighty power and grant that this day we fall into no sin, neither run into any kind of danger, but that all our doings, being ordered by your governance, may be righteous in your sight; through Jesus Christ, your son, our Lord, who lives and reigns with you and the Holy Spirit, one God, now and forever, amen.');
      }

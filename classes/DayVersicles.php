@@ -36,7 +36,7 @@ class DayVersicles extends Element {
           }
           
 	$this->lecho('Make haste, O God, to deliver me.');
-	$this->cecho('Make to help me O Lord. Glory be to the Father and to the Son, and to the Holy Spirit; as it was in the beginning, is now, and will be forever. Amen.');          
+	$this->cecho('Make haste to help me O Lord. Glory be to the Father and to the Son, and to the Holy Spirit; as it was in the beginning, is now, and will be forever. Amen.');          
           if(in_array($this->season['seaon'], array('lent', 'advent'))){
                $this->cecho($this->responses[$this->season['season']]);
           }else{
