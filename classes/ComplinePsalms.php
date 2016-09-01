@@ -15,6 +15,7 @@ class ComplinePsalms extends Element {
           
           $this->showName();
           echo '<iframe src="https://www.biblegateway.com/passage/?search=psalm ' . $p . '&version=ESV" width="80%" height="300px"></iframe><br />';
+          $this->cecho('Glory be to the Father, and to the Son, and to the Holy Spirit, as it was in the beginning, is now and will be forever, amen.');          
      }
 }
 

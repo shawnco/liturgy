@@ -8,14 +8,14 @@
 class NonePsalms extends Element {
      protected $name = 'Psalmody';
      private $psalms = array(
-         '121',
-         '123',
-         '125',
-         '127',
-         '129',
-         '131',
-         '132:9-16',
-         '134'
+         array(120, 121),
+         array(122, 123),
+         array(124, 125),
+         array(126, 127),
+         array(128, 129),
+         array(130, 131),
+         array('132:1-9', '132:10-18'),
+         array(133, 134)
      );
      
      public function __construct(){
@@ -24,8 +24,13 @@ class NonePsalms extends Element {
      
      public function display(){
           $this->showName();
-          // For now just manually enter the psalm...
-          echo '<iframe src="https://www.biblegateway.com/passage/?search=psalm ' . $this->psalms[0] . '&version=ESV" width="80%" height="300px"></iframe><br />';
+          $index = floor(time()/86400) % 7;
+          if($this->season['day'] === 2 || $this->season['day'] === 4){
+            echo '<iframe src="https://www.biblegateway.com/passage/?search=psalm ' . $this->psalms[$index][0] . '; psalm ' . $this->psalms[$index][1] . '&version=ESV" width="80%" height="300px"></iframe><br />';              
+          }else{
+              echo '<iframe src="https://www.biblegateway.com/passage/?search=psalm ' . $this->psalms[$index][1] . '&version=ESV" width="80%" height="300px"></iframe><br />';           
+          }
+          $this->cecho('Glory be to the Father, and to the Son, and to the Holy Spirit, as it was in the beginning, is now and will be forever, amen.');          
      }
 }
 

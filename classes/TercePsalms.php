@@ -55,9 +55,9 @@ class TercePsalms extends Element {
           
           $base = strtotime('August 21, 2016') / 86400;
           $pastSunday = strtotime('last Sunday') / 86400;
-          $sum = math.floor(($pastSunday - $base) / 7) + $days[$this->season['day']];          
-          $sum += 17;
+          $sum = ($pastSunday - $base) + $days[$this->season['day']]; 
           echo '<iframe src="https://www.biblegateway.com/passage/?search=psalm 119:' . $this->octaves[$sum % 21] . '&version=ESV" width="80%" height="300px"></iframe><br />';
+          $this->cecho('Glory be to the Father, and to the Son, and to the Holy Spirit, as it was in the beginning, is now and will be forever, amen.');          
      }
 }
 

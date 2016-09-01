@@ -24,12 +24,13 @@ class SextPsalms extends Element {
      
      public function display(){
           $this->showName();
-          $index = math.floor(time()/85400) % 7;
-          if($this->season['day'] === 2 || $this->season['day'] === 4){
-          echo '<iframe src="https://www.biblegateway.com/passage/?search=psalm ' . $this->psalms[$index][0] . '-' . $this->psalms[$index][1] . '&version=ESV" width="80%" height="300px"></iframe><br />';              
+          $index = floor(time()/86400) % 7;
+          if($this->season['day'] === 1 || $this->season['day'] === 3 || $this->season['day'] === 5){
+          echo '<iframe src="https://www.biblegateway.com/passage/?search=psalm ' . $this->psalms[$index][0] . '; psalm ' . $this->psalms[$index][1] . '&version=ESV" width="80%" height="300px"></iframe><br />';              
           }else{
               echo '<iframe src="https://www.biblegateway.com/passage/?search=psalm ' . $this->psalms[$index][0] . '&version=ESV" width="80%" height="300px"></iframe><br />';           
           }
+          $this->cecho('Glory be to the Father, and to the Son, and to the Holy Spirit, as it was in the beginning, is now and will be forever, amen.');
      }
 }
 
