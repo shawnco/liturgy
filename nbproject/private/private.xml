@@ -3,13 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Program%20Files%20(x86)/Ampps/www/liturgy/classes/SextPsalms.php</file>
-            <file>file:/C:/Program%20Files%20(x86)/Ampps/www/liturgy/classes/NoneReadings.php</file>
-            <file>file:/C:/Program%20Files%20(x86)/Ampps/www/liturgy/classes/SextReadings.php</file>
-            <file>file:/C:/Program%20Files%20(x86)/Ampps/www/liturgy/classes/DayVersicles.php</file>
-            <file>file:/C:/Program%20Files%20(x86)/Ampps/www/liturgy/classes/MatinsReadings.php</file>
-            <file>file:/C:/Program%20Files%20(x86)/Ampps/www/liturgy/classes/TerceReadings.php</file>
-            <file>file:/C:/Program%20Files%20(x86)/Ampps/www/liturgy/classes/Element.php</file>
+            <file>file:/C:/Program%20Files%20(x86)/Ampps/www/liturgy/classes/MatinsPrayers.php</file>
+            <file>file:/C:/Program%20Files%20(x86)/Ampps/www/liturgy/classes/VespersPrayers.php</file>
         </group>
     </open-files>
 </project-private>

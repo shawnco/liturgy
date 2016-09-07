@@ -176,7 +176,7 @@ class VespersReadings extends Element {
      public function display(){
           if($this->season['season'] == 'ordinary'){
                // Probably incorrect
-               $reading = $this->readings[date('M')][date('d')];
+               $reading = $this->readings[date('M')][date('d') - 1];
           }else{
                $reading = $this->readings[$this->season['season']][$this->season['week']][$this->season['day']];
           }
