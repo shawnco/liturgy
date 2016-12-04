@@ -34,7 +34,7 @@ class MatinsResponsory extends Element {
      
      public function display(){
           $this->showName();
-          if(!in_array($this->season['season'], array('lent', 'advent', 'easter'))){
+          if(!in_array($this->season['season'], array('lent', 'easter'))){
                $this->season['season'] = 'other';
           }
           if($this->season['season'] === 'easter'){

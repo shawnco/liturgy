@@ -26,7 +26,7 @@ class MatinsPrayers extends Element {
               $this->cecho('Creator of all knowledge, bless my academic efforts. Give me focus and endurance to learn and understand course material, patience with homework, and humility to ask others for help.');
           }
           $this->cecho($this->morningPrayer());
-          $this->cecho('O Lord, our heavenly Father, almighty and everlasting God, you have safely brought us to the beginning of this day. Defend us in the same with your mighty power and grant that this day we fall into no sin, neither run into any kind of danger, but that all our doings, being ordered by your governance, may be righteous in your sight; through Jesus Christ, your son, our Lord, who lives and reigns with you and the Holy Spirit, one God, now and forever, amen.');
+          $this->cecho('O Lord, our heavenly Father, almighty and everlasting God, you have safely brought us to the beginning of this day. Defend us in the same with your mighty power and grant that this day we fall into no sin, neither run into any kind of danger, but that all our doings, being ordered by your governance, may be righteous in your sight; through Jesus Christ, your son, our Lord, who lives and reigns with you and the Holy Spirit, one God, now and forever.');
      }
      
      // Only used on Sundays
@@ -200,10 +200,27 @@ together in unity by your Holy Spirit, may show forth your power among all peopl
                   'Grant us, Lord, not to be anxious about earthly things, but to love things heavenly; and even now, while we are placed among things that are passing away, to hold fast to those that shall endure; through Jesus Christ our Lord, who lives and reigns with you and the Holy Spirit, one God, for ever and ever. Amen.'
               ),
               'advent' => array(
-                  
+                  'Almighty God, give us grace to cast away the works of
+darkness, and put on the armor of light, now in the time of
+this mortal life in which your Son Jesus Christ came to visit
+us in great humility; that in the last day, when he shall come
+again in his glorious majesty to judge both the living and the
+dead, we may rise to the life immortal.',
+                  'Merciful God, who sent your messengers the prophets to
+preach repentance and prepare the way for our salvation:
+Give us grace to heed their warnings and forsake our sins,
+that we may greet with joy the coming of Jesus Christ our
+Redeemer.',
+                  'Stir up your power, O Lord, and with great might come
+among us; and, because we are sorely hindered by our sins,
+let your bountiful grace and mercy speedily help and deliver
+us.',
+                  'Purify our conscience, Almighty God, by your daily visitation,
+that your Son Jesus Christ, at his coming, may find in us a
+mansion prepared for himself.'
               )
           );
-          return $collects[$this->season['season']][$this->season['week']];
+          return $collects[$this->season['season']][$this->season['week']-1];
      }
      
      // From the Portals of Prayer booklet
