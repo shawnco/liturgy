@@ -19,7 +19,43 @@ class MatinsReadings extends Element {
              
          ),
          'epiphany' => array(
-             
+             array(),
+             array(
+                 '',
+                 'Rom 7:1–20',
+                 'Rom 7:21-8:17',
+                 'Rom 8:18-39',
+                 'Rom 9:1-18',
+                 'Rom 9:19-33',
+                 'Rom 10:1-21'
+             ),
+             array(
+                 'Rom 11:1–24',
+                 'Rom 11:25-12:13',
+                 'Rom 12:14-13:14',
+                 'Rom 14:1–23',
+                 'Rom 15:1–13',
+                 'Rom 15:14–33',
+                 'Rom 16:17–27'
+             ),
+             array(
+                 '2 Tim 1:1–18',
+                 '2 Tim 2:1–26',
+                 '2 Tim 3:1–18',
+                 '2 Tim 4:1–18',
+                 'Titus 1:1-2:6',
+                 'Titus 2:7-3:15',
+                 'Titus 2:7-3:15'
+             ),
+             array(
+                 'John 1:19–34',
+                 'John 1:35–51',
+                 'John 2:1–12',
+                 'John 2:13–25',
+                 'John 3:1–21',
+                 'John 3:22-4:6',
+                 'John 4:7–26'
+             )
          ),
          'lent' => array(
              
@@ -220,10 +256,10 @@ class MatinsReadings extends Element {
           if($this->season['season'] == 'ordinary'){
                $reading = $this->readings[date('M')][date('d')-1];
           }else{
-               $reading = $this->readings[$this->season['season']][$this->season['week']][$this->season['day']];
+               $reading = $this->readings[$this->season['season']][$this->season['week']-1][$this->season['day']];
           }
           $this->showName();
-          echo '<iframe src="https://www.biblegateway.com/passage/?search=' . $reading . '&verson=NASB" width="80%" height="300px"></iframe><br />';
+          echo '<iframe src="https://www.biblegateway.com/passage/?search=' . $reading . '&version=NASB" width="80%" height="300px"></iframe><br />';
      }
 }
 

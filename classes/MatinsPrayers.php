@@ -106,6 +106,45 @@ class MatinsPrayers extends Element {
      private function weeklyCollect(){
           // TODO: Complete this. Right now we're going to be in Ordinary and Advent for some time. Put those in for testing.
           $collects = array(
+              'epiphany' => array(
+                  '',
+                  'Almighty God, whose Son our Savior Jesus Christ is the light
+of the world: Grant that your people, illumined by your Word
+and Sacraments, may shine with the radiance of Christ\'s
+glory, that he may be known, worshiped, and obeyed to the
+ends of the earth.',
+                  'Give us grace, O Lord, to answer readily the call of our
+Savior Jesus Christ and proclaim to all people the Good News
+of his salvation, that we and the whole world may perceive
+the glory of his marvelous works.',
+                  'Almighty and everlasting God, you govern all things both in
+heaven and on earth: Mercifully hear the supplications of
+your people, and in our time grant us your peace.',
+                  'Set us free, O God, from the bondage of our sins, and give us
+the liberty of that abundant life which you have made known
+to us in your Son our Savior Jesus Christ.',
+                  'O God, the strength of all who put their trust in you:
+Mercifully accept our prayers; and because in our weakness
+we can do nothing good without you, give us the help of your
+grace, that in keeping your commandments we may please
+you both in will and deed.',
+                  'O Lord, you have taught us that without love whatever we
+do is worth nothing; Send your Holy Spirit and pour into our
+hearts your greatest gift, which is love, the true bond of peace
+and of all virtue, without which whoever lives is accounted
+dead before you.',
+                  'Most loving Father, whose will it is for us to give thanks for
+all things, to fear nothing but the loss of you, and to cast all our care on you who care for us: Preserve us from faithless
+fears and worldly anxieties, that no clouds of this mortal life
+may hide from us the light of that love which is immortal,
+and which you have manifested to us in your Son Jesus Christ
+our Lord',
+                  'O God, who before the passion of your only-begotten Son
+revealed his glory upon the holy mountain: Grant to us that
+we, beholding by faith the light of his countenance, may be
+strengthened to bear our cross, and be changed into his
+likeness from glory to glory.'
+              ),
               'ordinary' => array(
                   'Remember, O Lord, what you have wrought in us and not
 what we deserve; and, as you have called us to your service,

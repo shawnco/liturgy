@@ -53,7 +53,7 @@ abstract class Element {
           // Identify the seasonal ranges
           $yearStart = strtotime('January 1, ' . $year);
           $easterStart = easter_date($year);
-          $epiphany = strtotime('');
+          $epiphany = strtotime('January 6, ' . $year);
           $lent = strtotime('-46 days', $easterStart);
           $easter = $easterStart;
           $ordinary = strtotime('+50 days', $easterStart);

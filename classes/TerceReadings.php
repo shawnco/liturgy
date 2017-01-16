@@ -10,47 +10,47 @@ class TerceReadings extends Element {
      
      private $readings = array(
          'advent' => array(
-             array(
+//             array(
                'Rom. 13:11',
                'Rom 15:4',
                'Phil. 4:4-5',
                '1 Co. 4:12'
-             ),
-             'Jer. 23:5'
+//             ),
+//             'Jer. 23:5'
          ),
          'christmas' => array(
-             array(
+//             array(
                  'Gal. 4:1-2',
                  'Phil. 2:8-10'
-             ),
-             'Titus 2:11-12'
+//             ),
+//             'Titus 2:11-12'
              
          ),
          'epiphany' => array(
-             array(
+//             array(
                  '1 Cor. 9:24',
                  '2 Cor. 11:19-20',
                  '1 Cor. 13:1'
-             ),
-             'Isa. 60:1'
+//             ),
+//             'Isa. 60:1'
          ),
          'lent' => array(
-             array(
+//             array(
                  '2 Cor. 6:1-2',
                  '1 Thess. 4:1',
                  'Eph. 5:1-2',
                  'Gal. 4:22-24',
                  'Heb. 9:11-12',
                  'Phil. 2:5-7'
-             ),
-             'Joel 2:12-13'
+//             ),
+//             'Joel 2:12-13'
              
          ),
          'easter' => array(
-             array(
+//             array(
                  'Psalm 118:24'
-             ),
-             'Rom. 6:9-10'
+//             ),
+//             'Rom. 6:9-10'
          ),
          'ordinary' => array(
              '1 John 4:16',
@@ -71,7 +71,7 @@ class TerceReadings extends Element {
                     $reading = $this->readings['ordinary'][1];
                }
           }else{
-               $reading = $this->readings[$this->season['season']][$this->season['week']];
+               $reading = $this->readings[$this->season['season']][$this->season['week']-1];
           }
           echo '<iframe src="https://www.biblegateway.com/passage/?search=' . $reading . '&verson=NASB" width="80%" height="300px"></iframe><br />';
      }

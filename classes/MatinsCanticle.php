@@ -12,7 +12,6 @@ class MatinsCanticle extends Element {
      public function __construct(){
           include('MatinsCanticleAntiphon.php');
           $this->antiphon = new MatinsCanticleAntiphon();
-          
           // Legibility is nice, but this makes me feel clever. I like to feel clever.
           $this->name = (floor(time() / 86400) % 2 === 0) ? 'Benedictus' : 'Te Deum';
      }
